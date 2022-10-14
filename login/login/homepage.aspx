@@ -107,11 +107,11 @@
                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <h3>Jason Chandra</h3>
-                      <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star-half-o"></i>
+                      <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-o"></i>
                 </div>
             </div>
 
@@ -121,11 +121,11 @@
                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <h3>Amanda barkley</h3>
-                    <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star"></i>
-                     <i class="facilities fa-star-o"></i>
+                    <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-o"></i>
                 </div>
             </div>
         </div>

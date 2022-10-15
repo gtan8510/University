@@ -36,5 +36,26 @@ namespace login.DAL
             return iResult;
 
         }
+
+        //update account
+        public int updateProfile(Account accnt)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection conn = new SqlConnection(DBConnect);
+            string sqlstmt = "UPDATE AdminData SET AdminName = @paraUname, AdminPassword = @ParaUPwd, AdminEmail = @paraUEmail, AdminAge = @ParaAge";
+            int iResult = 0;
+            SqlCommand cmd = new SqlCommand(sqlstmt.ToString(), conn);
+
+            cmd.Parameters.AddWithValue("@paraUEmail", accnt.AdminEmail);
+            cmd.Parameters.AddWithValue("@paraUPwd", accnt.AdminPassword);
+            cmd.Parameters.AddWithValue("@paraUName", accnt.AdminUsername);
+            cmd.Parameters.AddWithValue("@paraAge", accnt.AdminAge);
+
+            conn.Open();
+            iResult = cmd.ExecuteNonQuery();
+            conn.Close();
+            return iResult;
+        }
     }
+
 }

@@ -24,58 +24,58 @@ namespace COMP3851B.Views.Admin.Sports
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lblFirstESportsClub control.
+        /// lblESportsClub control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstESportsClub;
+        protected global::System.Web.UI.WebControls.Label lblESportsClub;
 
         /// <summary>
-        /// txtFirstESportsClubName control.
+        /// txtESportsClubName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstESportsClubName;
+        protected global::System.Web.UI.WebControls.TextBox txtESportsClubName;
 
         /// <summary>
-        /// lblFirstESportsClubDesc control.
+        /// lblESportsClubDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstESportsClubDesc;
+        protected global::System.Web.UI.WebControls.Label lblESportsClubDesc;
 
         /// <summary>
-        /// txtFirstESportsClubDesc control.
+        /// txtESportsClubDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstESportsClubDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtESportsClubDesc;
 
         /// <summary>
-        /// lblFirstESportsClubImage control.
+        /// lblESportsClubImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstESportsClubImage;
+        protected global::System.Web.UI.WebControls.Label lblESportsClubImage;
 
         /// <summary>
-        /// FirstESportsClubImg control.
+        /// ESportsClubImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FirstESportsClubImg;
+        protected global::System.Web.UI.WebControls.FileUpload ESportsClubImg;
 
         /// <summary>
         /// lblSecondESportsClubName control.

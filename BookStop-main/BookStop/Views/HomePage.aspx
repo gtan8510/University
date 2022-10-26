@@ -25,7 +25,7 @@
       </div>
       <div class="card-body">
         <div class="card-deck">
-            <asp:DataList ID="dlHome" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" OnItemCommand="dlHome_ItemCommand">
+            <asp:DataList ID="dlHome" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" OnItemCommand="dlHome_ItemCommand" OnSelectedIndexChanged="dlHome_SelectedIndexChanged">
                 <ItemTemplate >
                     <div class="card text-center" style="width: 16.5rem; height: 25rem;">
                         <asp:Image ID="Image2" class="card-img-top" ImageUrl='<%# Bind("filePath", "{0}") %>' runat="server" height="211px"  width="262.5px"/>            

@@ -60,5 +60,10 @@ namespace WebAssignment.Views
                 Response.Redirect("~/Views/ViewProduct.aspx");
             }
         }
+
+        protected void dlHome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

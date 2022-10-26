@@ -54,22 +54,22 @@
         <hr />
 
         <div class="form-group">
-            <asp:Label ID="lblCFirstCampusName" runat="server"  CssClass="col-md-2 control-label" Text=" First Campus Name"></asp:Label>
+            <asp:Label ID="lblCCampusName" runat="server"  CssClass="col-md-2 control-label" Text=" Campus Name"></asp:Label>
        <div class="col-md-3"> 
-           <asp:TextBox ID="txtCampusOneName" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtCampusName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
             </div>
       
           <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstCampusImage" runat="server"  CssClass="col-md-2 control-label" Text="First Campus Image"></asp:Label>
+            <asp:Label ID="lblCampusImage" runat="server"  CssClass="col-md-2 control-label" Text="First Campus Image"></asp:Label>
        <div class="col-md-3">
-            <asp:FileUpload ID="FirstCampusImg" CssClass="form-control" runat="server" />
+            <asp:FileUpload ID="CampusImg" CssClass="form-control" runat="server" />
        </div>
         </div>
             <br /><br />
-
+        <!--
          <div class="form-group">
             <asp:Label ID="lblSecondCampusName" runat="server"  CssClass="col-md-2 control-label" Text="Second Campus Name"></asp:Label>
        <div class="col-md-3"> 
@@ -103,10 +103,10 @@
             <asp:FileUpload ID="FuThirdCampusImage" CssClass="form-control" runat="server" />
        </div>
         </div>
-            <br /><br />
+            <br /><br />-->
 
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" />
+                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" OnClick="btnCreate_Click" />
                 <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />

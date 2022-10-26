@@ -78,6 +78,7 @@ namespace BookStop.DAL
             return recList;
         }
 
+     
         //Get one product by id
         public Product RetrieveOne(int id)
         {

@@ -24,210 +24,147 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lblCourseOneName control.
+        /// lblID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseOneName;
+        protected global::System.Web.UI.WebControls.Label lblID;
 
         /// <summary>
-        /// txtCourseOneName control.
+        /// lblCourseName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseOneName;
+        protected global::System.Web.UI.WebControls.Label lblCourseName;
 
         /// <summary>
-        /// lblCourseOneDesc control.
+        /// txtCourseName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseOneDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtCourseName;
 
         /// <summary>
-        /// txtCourseOneDesc control.
+        /// courseNameValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseOneDesc;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator courseNameValidator;
 
         /// <summary>
-        /// lblCourseOneImage control.
+        /// lblCourseDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseOneImage;
+        protected global::System.Web.UI.WebControls.Label lblCourseDesc;
 
         /// <summary>
-        /// FuImg01 control.
+        /// txtCourseDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FuImg01;
+        protected global::System.Web.UI.WebControls.TextBox txtCourseDesc;
 
         /// <summary>
-        /// lblCourseTwoName control.
+        /// courseDescValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseTwoName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator courseDescValidator;
 
         /// <summary>
-        /// txtCourseTwoname control.
+        /// lblCourseImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseTwoname;
+        protected global::System.Web.UI.WebControls.Label lblCourseImage;
 
         /// <summary>
-        /// lblCourseTwoDesc control.
+        /// ImgThumbnail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseTwoDesc;
+        protected global::System.Web.UI.WebControls.Image ImgThumbnail;
 
         /// <summary>
-        /// txtCourseTwoDesc control.
+        /// uploadThumbnail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseTwoDesc;
+        protected global::System.Web.UI.WebControls.FileUpload uploadThumbnail;
 
         /// <summary>
-        /// lblCourseTwoImage control.
+        /// courseImageValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseTwoImage;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator courseImageValidator;
 
         /// <summary>
-        /// FuImgCourseTwo control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FuImgCourseTwo;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
-        /// lblCourseThreename control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseThreename;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// txtCourseThreeName control.
+        /// lblNotice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseThreeName;
+        protected global::System.Web.UI.WebControls.Label lblNotice;
 
         /// <summary>
-        /// lblCourse3Desc control.
+        /// GvCourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourse3Desc;
+        protected global::System.Web.UI.WebControls.GridView GvCourse;
 
         /// <summary>
-        /// txtCourseThreeDesc control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseThreeDesc;
-
-        /// <summary>
-        /// lblCourseThreeImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseThreeImage;
-
-        /// <summary>
-        /// FuImageCourseThree control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FuImageCourseThree;
-
-        /// <summary>
-        /// btnCreate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
-
-        /// <summary>
-        /// btnRun control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRun;
-
-        /// <summary>
-        /// btnUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
-
-        /// <summary>
-        /// btnDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
-
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

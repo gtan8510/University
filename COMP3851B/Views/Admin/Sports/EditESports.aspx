@@ -54,31 +54,31 @@
         <hr />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstESportsClub" runat="server"  CssClass="col-md-2 control-label" Text=" First E-Sports Club Name"></asp:Label>
+            <asp:Label ID="lblESportsClub" runat="server"  CssClass="col-md-2 control-label" Text=" E-Sports Club Name"></asp:Label>
        <div class="col-md-3"> 
-           <asp:TextBox ID="txtFirstESportsClubName" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtESportsClubName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
             </div>
       
           <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstESportsClubDesc" runat="server"  CssClass="col-md-2 control-label" Text="First  E-Sports Club Desc"></asp:Label>
+            <asp:Label ID="lblESportsClubDesc" runat="server"  CssClass="col-md-2 control-label" Text=" E-Sports Club Desc"></asp:Label>
        <div class="col-md-3">
-           <asp:TextBox ID="txtFirstESportsClubDesc" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtESportsClubDesc" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
                 </div>
       
             <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstESportsClubImage" runat="server"  CssClass="col-md-2 control-label" Text="First E-Sports Club Image"></asp:Label>
+            <asp:Label ID="lblESportsClubImage" runat="server"  CssClass="col-md-2 control-label" Text="E-Sports Club Image"></asp:Label>
        <div class="col-md-3">
-            <asp:FileUpload ID="FirstESportsClubImg" CssClass="form-control" runat="server" />
+            <asp:FileUpload ID="ESportsClubImg" CssClass="form-control" runat="server" />
        </div>
         </div>
             <br /><br />
-
+        <!--
          <div class="form-group">
             <asp:Label ID="lblSecondESportsClubName" runat="server"  CssClass="col-md-2 control-label" Text="Second E-Sports Club Name"></asp:Label>
        <div class="col-md-3"> 
@@ -129,10 +129,10 @@
             <asp:FileUpload ID="FuThirdESportsClubImage" CssClass="form-control" runat="server" />
        </div>
         </div>
-            <br /><br />
+            <br /><br />-->
 
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" />
+                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" OnClick="btnCreate_Click" />
                 <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />

@@ -55,31 +55,31 @@
         <hr />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstFacilityName" runat="server"  CssClass="col-md-2 control-label" Text="First Facility Name"></asp:Label>
+            <asp:Label ID="lblFacilityName" runat="server"  CssClass="col-md-2 control-label" Text="Facility Name"></asp:Label>
        <div class="col-md-3"> 
-           <asp:TextBox ID="txtFirstFacilityName" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtFacilityName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
             </div>
       
             <br /><br />
 
             <div class="form-group">
-            <asp:Label ID="lblFirstFacilityDesc" runat="server"  CssClass="col-md-2 control-label" Text="First Facility Desc"></asp:Label>
+            <asp:Label ID="lblFacilityDesc" runat="server"  CssClass="col-md-2 control-label" Text="Facility Desc"></asp:Label>
        <div class="col-md-3">
-           <asp:TextBox ID="txtFirstFacilityDesc" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtFacilityDesc" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
                 </div>
       
             <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstFacilityImage" runat="server"  CssClass="col-md-2 control-label" Text="First Facility Image"></asp:Label>
+            <asp:Label ID="lblFacilityImage" runat="server"  CssClass="col-md-2 control-label" Text="Facility Image"></asp:Label>
        <div class="col-md-3">
-            <asp:FileUpload ID="FuFirstFacilityImg01" CssClass="form-control" runat="server" />
+            <asp:FileUpload ID="FuFacilityImg" CssClass="form-control" runat="server" />
        </div>
         </div>
             <br /><br />
-
+        <!--
          <div class="form-group">
             <asp:Label ID="lblSecondFacilityName" runat="server"  CssClass="col-md-2 control-label" Text="Second Faccility Name"></asp:Label>
        <div class="col-md-3"> 
@@ -130,10 +130,10 @@
             <asp:FileUpload ID="FuImageThirdFacility" CssClass="form-control" runat="server" />
        </div>
         </div>
-            <br /><br />
+            <br /><br />-->
 
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" />
+                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" OnClick="btnCreate_Click" />
                 <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />

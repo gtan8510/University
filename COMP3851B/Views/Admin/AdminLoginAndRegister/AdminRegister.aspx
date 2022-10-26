@@ -33,28 +33,39 @@
                         <h1 class="text-base text-primary text-uppercase mb-4">Register</h1>
                         <h2 class="mb-4">Sign Up</h2>
 
+                        
                         <div class="form-group mb-4">
+                            <br />
+                            <asp:RegularExpressionValidator ID="emailVaidator" runat="server" ErrorMessage="This is not a valid email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red"></asp:RegularExpressionValidator>
+                            <br />
+                            <asp:Label ID="lblErrorRegister" runat="server" Text="" ForeColor="Red"></asp:Label>
                             <asp:TextBox ID="txtEmail" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Email" runat="server"></asp:TextBox>
                             
 
                         </div>
                           <div class="form-group mb-4">
-                            <asp:TextBox ID="txtPass" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Password" runat="server"></asp:TextBox>
+                              <br />
+                              <asp:RegularExpressionValidator ID="passvalidator" runat="server" ErrorMessage="Please enter the password" ControlToValidate="txtPass" ForeColor="Red"></asp:RegularExpressionValidator>
+                            <asp:TextBox ID="txtPass" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
                             
 
                         </div>
                          <div class="form-group mb-4">
+                             <br />
+                             <asp:RegularExpressionValidator ID="namevalidator" runat="server" ErrorMessage="Please enter your name" ControlToValidate="txtName" ForeColor="Red"></asp:RegularExpressionValidator>
                             <asp:TextBox ID="txtName" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Name" runat="server"></asp:TextBox>
                             
 
                         </div>
                           <div class="form-group mb-4">
+                              <br />
+                              <asp:RegularExpressionValidator ID="ageValidator" runat="server" ErrorMessage="Please enter your age" ControlToValidate="txtAge" ForeColor="Red"></asp:RegularExpressionValidator>
                             <asp:TextBox ID="txtAge" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Age" runat="server"></asp:TextBox>
                             
 
                         </div>
                        
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-success" Height="50px" Width="400px" />
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-success" Height="50px" Width="400px" OnClick="btnRegister_Click" />
                            <br /><br />
                         <asp:Button ID="btnAdminHome" runat="server" Text="Admin Home" CssClass="btn btn-warning" Height="50px" Width="400px" OnClick="btnAdminHome_Click" />
                     </div>

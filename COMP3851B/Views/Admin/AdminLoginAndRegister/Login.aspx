@@ -34,18 +34,24 @@
                         <h2 class="mb-4">WELCOME BACK</h2>
 
                         <div class="form-group mb-4">
+                             <br />
+                            <asp:RegularExpressionValidator ID="emailVaidator" runat="server" ErrorMessage="This is not a valid email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red"></asp:RegularExpressionValidator>
+                            <br />
+                            <asp:Label ID="lblErrorLogin" runat="server" Text="" ForeColor="Red"></asp:Label>
                             <asp:TextBox ID="txtEmail" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Email" runat="server"></asp:TextBox>
                             
 
                         </div>
                           <div class="form-group mb-4">
+                                <br />
+                              <asp:RegularExpressionValidator ID="passvalidator" runat="server" ErrorMessage="Please enter the password" ControlToValidate="txtPass" ForeColor="Red"></asp:RegularExpressionValidator>
                             <asp:TextBox ID="txtPass" CssClass="form-control border-0 shadow form-control-lg text-base" placeholder="Password" runat="server"></asp:TextBox>
                             
 
                         </div>
                        
-                       
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" Height="50px" Width="400px" />
+                       <br />
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" Height="50px" Width="400px" OnClick="btnLogin_Click" />
                         <br /><br />
                         <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass=" btn btn-primary" Height="50px" Width="400px" />
                         <br /><br />

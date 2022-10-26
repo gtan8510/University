@@ -24,40 +24,40 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lblFirstFeedbackName control.
+        /// lblFeedbackPersonName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstFeedbackName;
+        protected global::System.Web.UI.WebControls.Label lblFeedbackPersonName;
 
         /// <summary>
-        /// txtFirstFeedbackName control.
+        /// txtFeedbackPersonName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstFeedbackName;
+        protected global::System.Web.UI.WebControls.TextBox txtFeedbackPersonName;
 
         /// <summary>
-        /// lblFirstFeedbackDesc control.
+        /// lblFeedbackDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstFeedbackDesc;
+        protected global::System.Web.UI.WebControls.Label lblFeedbackDesc;
 
         /// <summary>
-        /// txtFirstFeedbackDesc control.
+        /// txtFeedbackDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstFeedbackDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtFeedbackDesc;
 
         /// <summary>
         /// lblSecondFeedbackName control.

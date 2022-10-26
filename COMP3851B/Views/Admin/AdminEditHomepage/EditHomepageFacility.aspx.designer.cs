@@ -24,58 +24,58 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lblFirstFacilityName control.
+        /// lblFacilityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstFacilityName;
+        protected global::System.Web.UI.WebControls.Label lblFacilityName;
 
         /// <summary>
-        /// txtFirstFacilityName control.
+        /// txtFacilityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstFacilityName;
+        protected global::System.Web.UI.WebControls.TextBox txtFacilityName;
 
         /// <summary>
-        /// lblFirstFacilityDesc control.
+        /// lblFacilityDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstFacilityDesc;
+        protected global::System.Web.UI.WebControls.Label lblFacilityDesc;
 
         /// <summary>
-        /// txtFirstFacilityDesc control.
+        /// txtFacilityDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstFacilityDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtFacilityDesc;
 
         /// <summary>
-        /// lblFirstFacilityImage control.
+        /// lblFacilityImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstFacilityImage;
+        protected global::System.Web.UI.WebControls.Label lblFacilityImage;
 
         /// <summary>
-        /// FuFirstFacilityImg01 control.
+        /// FuFacilityImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FuFirstFacilityImg01;
+        protected global::System.Web.UI.WebControls.FileUpload FuFacilityImg;
 
         /// <summary>
         /// lblSecondFacilityName control.

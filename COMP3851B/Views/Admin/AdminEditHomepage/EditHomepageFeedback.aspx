@@ -55,24 +55,24 @@
         <hr />
 
         <div class="form-group">
-            <asp:Label ID="lblFirstFeedbackName" runat="server"  CssClass="col-md-2 control-label" Text="First Feeback Name"></asp:Label>
+            <asp:Label ID="lblFeedbackPersonName" runat="server"  CssClass="col-md-2 control-label" Text="Feeback Person Name"></asp:Label>
        <div class="col-md-3"> 
-           <asp:TextBox ID="txtFirstFeedbackName" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtFeedbackPersonName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
             </div>
       
             <br /><br />
 
             <div class="form-group">
-            <asp:Label ID="lblFirstFeedbackDesc" runat="server"  CssClass="col-md-2 control-label" Text="First Feedback Desc"></asp:Label>
+            <asp:Label ID="lblFeedbackDesc" runat="server"  CssClass="col-md-2 control-label" Text="Feedback Desc"></asp:Label>
        <div class="col-md-3">
-           <asp:TextBox ID="txtFirstFeedbackDesc" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtFeedbackDesc" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
                 </div>
       
             <br /><br />
 
-
+        <!--
          <div class="form-group">
             <asp:Label ID="lblSecondFeedbackName" runat="server"  CssClass="col-md-2 control-label" Text="Second Feedback Name"></asp:Label>
        <div class="col-md-3"> 
@@ -90,13 +90,13 @@
                 </div>
       
             <br /><br />
-
+        -->
 
       
 
 
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" />
+                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" OnClick="btnCreate_Click" />
                 <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />

@@ -52,109 +52,103 @@
 <div class="container"  style="margin-left: 280px">
 
     <div class="form-horizontal">
-        <h2>Edit Homepage</h2>
+        <h2>Homepage Course Dtaa</h2>
         <hr />
 
+        <!--CategoryID -->
         <div class="form-group">
-            <asp:Label ID="lblCourseOneName" runat="server"  CssClass="col-md-2 control-label" Text="Course One Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtCourseOneName" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:Label ID="lblID" runat="server" CssClass="col-12 control-label" Text="Category ID: (No row selected)"></asp:Label>
         </div>
+        <br />
+        <div class="form-group">
+            <asp:Label ID="lblCourseName" runat="server"  CssClass="col-md-2 control-label" Text="Course Name"></asp:Label>
+       <div class="col-md-3"> 
+           <asp:TextBox ID="txtCourseName" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+            <asp:RequiredFieldValidator ID="courseNameValidator" runat="server" ErrorMessage="Course Name is needed" ControlToValidate="txtCourseName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
       
             <br /><br />
 
             <div class="form-group">
-            <asp:Label ID="lblCourseOneDesc" runat="server"  CssClass="col-md-2 control-label" Text="Course One Desc"></asp:Label>
+            <asp:Label ID="lblCourseDesc" runat="server"  CssClass="col-md-2 control-label" Text="Course Desc"></asp:Label>
        <div class="col-md-3">
-           <asp:TextBox ID="txtCourseOneDesc" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtCourseDesc" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
+                <asp:RequiredFieldValidator ID="courseDescValidator" runat="server" ErrorMessage="Course Description is needed" ControlToValidate="txtCourseDesc" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
       
             <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblCourseOneImage" runat="server"  CssClass="col-md-2 control-label" Text="Course One Image"></asp:Label>
-       <div class="col-md-3">
-            <asp:FileUpload ID="FuImg01" CssClass="form-control" runat="server" />
+            <asp:Label ID="lblCourseImage" runat="server"  CssClass="col-md-2 control-label" Text="Course Image"></asp:Label>
+       <div class="col-12">
+           <asp:Image ID="ImgThumbnail" ImageUrl="~/Images/insert image.png" runat="server" class="avatar img-thumbnail height=150" Width="150"/>
        </div>
-        </div>
-            <br /><br />
-
-         <div class="form-group">
-            <asp:Label ID="lblCourseTwoName" runat="server"  CssClass="col-md-2 control-label" Text="Course Two Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtCourseTwoname" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
+            <br />
+            <div class="col-12">
+                <asp:FileUpload ID="uploadThumbnail" runat="server" onchange ="img();" />
             </div>
-      
-            <br /><br />
-
-            <div class="form-group">
-            <asp:Label ID="lblCourseTwoDesc" runat="server"  CssClass="col-md-2 control-label" Text="Course Two Desc"></asp:Label>
-       <div class="col-md-3">
-           <asp:TextBox ID="txtCourseTwoDesc" runat="server" CssClass="form-control"></asp:TextBox>
-       </div>
-                </div>
-      
-            <br /><br />
-
-        <div class="form-group">
-            <asp:Label ID="lblCourseTwoImage" runat="server"  CssClass="col-md-2 control-label" Text="Course Two Image"></asp:Label>
-       <div class="col-md-3">
-            <asp:FileUpload ID="FuImgCourseTwo" CssClass="form-control" runat="server" />
-       </div>
+            <br />
+            <asp:RequiredFieldValidator ID="courseImageValidator" runat="server" ErrorMessage="Course Image is needed" ControlToValidate="uploadThumbnail" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
             <br /><br />
 
-         <div class="form-group">
-            <asp:Label ID="lblCourseThreename" runat="server"  CssClass="col-md-2 control-label" Text="Course Three Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtCourseThreeName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-            </div>
-      
-            <br /><br />
-
-            <div class="form-group">
-            <asp:Label ID="lblCourse3Desc" runat="server"  CssClass="col-md-2 control-label" Text="Course Three Desc"></asp:Label>
-       <div class="col-md-3">
-           <asp:TextBox ID="txtCourseThreeDesc" runat="server" CssClass="form-control"></asp:TextBox>
-       </div>
-                </div>
-      
-            <br /><br />
-
-        <div class="form-group">
-            <asp:Label ID="lblCourseThreeImage" runat="server"  CssClass="col-md-2 control-label" Text="Course Three Image"></asp:Label>
-       <div class="col-md-3">
-            <asp:FileUpload ID="FuImageCourseThree" CssClass="form-control" runat="server" />
-       </div>
-        </div>
-            <br /><br />
-
+       <!--Add & Search / Edit& Cancel buttons -->
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" />
-                <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
             </div>
-            <br /><br />
-        <div class="gridview">
-            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+
+            <br />
+            <hr />
+
+            <!--Notice Label -->
+            <div>
+                <asp:Label ID="lblNotice" runat="server"  CssClass="col-12 control-label" ForeColor="Red"></asp:Label>
+            </div>
+            
+            <br />
+
+            <!-- GridView -->
+            <div class="col-12">
+           <asp:GridView ID="GvCourse" runat="server" AutoGenerateColumns="False" DataKeyNames="courseID" DataSourceID="SqlDataSource1" Width="539px" CellPadding="4" ForeColor="#333333" GridLines="None">
+               <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+               <Columns>
+                   <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                   <asp:BoundField DataField="courseID" HeaderText="courseID" InsertVisible="False" ReadOnly="True" SortExpression="courseID" />
+                   <asp:BoundField DataField="courseName" HeaderText="courseName" SortExpression="courseName" />
+                   <asp:DynamicField DataField="courseDesc" HeaderText="courseDesc" />
+                   <asp:DynamicField DataField="coursePict" HeaderText="coursePict" />
+               </Columns>
                 <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-            </asp:GridView>
-        </div>
+               <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+               <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+               <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+               <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+               <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+               <SortedAscendingCellStyle BackColor="#E9E7E2" />
+               <SortedAscendingHeaderStyle BackColor="#506C8C" />
+               <SortedDescendingCellStyle BackColor="#FFFDF8" />
+               <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FunUniversityConnectionString %>" DeleteCommand="DELETE FROM [course] WHERE [courseID] = @courseID" InsertCommand="INSERT INTO [course] ([courseName], [courseDesc], [coursePict]) VALUES (@courseName, @courseDesc, @coursePict)" SelectCommand="SELECT [courseID], [courseName], [courseDesc], [coursePict] FROM [course]" UpdateCommand="UPDATE [course] SET [courseName] = @courseName, [courseDesc] = @courseDesc, [coursePict] = @coursePict WHERE [courseID] = @courseID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="courseID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="courseName" Type="String" />
+                        <asp:Parameter Name="courseDesc" Type="String" />
+                        <asp:Parameter Name="coursePict" Type="Object" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="courseName" Type="String" />
+                        <asp:Parameter Name="courseDesc" Type="String" />
+                        <asp:Parameter Name="coursePict" Type="Object" />
+                        <asp:Parameter Name="courseID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+            </div>
                
 </div>
     </div> 

@@ -24,40 +24,40 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lblCFirstCampusName control.
+        /// lblCCampusName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCFirstCampusName;
+        protected global::System.Web.UI.WebControls.Label lblCCampusName;
 
         /// <summary>
-        /// txtCampusOneName control.
+        /// txtCampusName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCampusOneName;
+        protected global::System.Web.UI.WebControls.TextBox txtCampusName;
 
         /// <summary>
-        /// lblFirstCampusImage control.
+        /// lblCampusImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstCampusImage;
+        protected global::System.Web.UI.WebControls.Label lblCampusImage;
 
         /// <summary>
-        /// FirstCampusImg control.
+        /// CampusImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FirstCampusImg;
+        protected global::System.Web.UI.WebControls.FileUpload CampusImg;
 
         /// <summary>
         /// lblSecondCampusName control.

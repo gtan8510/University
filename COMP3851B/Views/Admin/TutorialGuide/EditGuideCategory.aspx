@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditGuideCategory.aspx.cs" Inherits="COMP3851B.Views.Admin.TutorialGuide.EditGuideCategory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditGuideCategory.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -22,7 +22,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <!--Search bar -->
+    <!--Search bar -->
     <div class="main-content">
         <header>
             <h1>

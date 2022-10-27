@@ -1,11 +1,11 @@
-﻿using COMP3851B.BBL;
-using System;
-using System.Collections.Generic;
+﻿using System.Linq;
+using System.Web;
+using COMP3851B.BBL;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+using System;
+using System.Collections.Generic;
 
 namespace COMP3851B.DAL
 {
@@ -31,6 +31,7 @@ namespace COMP3851B.DAL
 
             return result;
         }
+
         public List<Guide> GetAllGuideCategories()
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
@@ -223,7 +224,7 @@ namespace COMP3851B.DAL
 
             return result;
         }
-        
+         
         public List<Guide> GetAllGuides()
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
@@ -260,7 +261,6 @@ namespace COMP3851B.DAL
             }
             return gList;
         }
-        
 
         public List<Guide> GetAllByCategory(int id)
         {
@@ -372,5 +372,41 @@ namespace COMP3851B.DAL
             return result;
         }
 
+        public List<Guide> SearchForGuide(Guide gde)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            String sqlstmt = "SELECT * FROM tutorialGuide WHERE gdeCatid LIKE @query AND gdeTitle LIKE @query2 AND gdeDesc LIKE @query3";
+
+            SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("@query", "%" + gde.gdeCatID + "%");
+            da.SelectCommand.Parameters.AddWithValue("@query2", "%" + gde.gdeTitle + "%");
+            da.SelectCommand.Parameters.AddWithValue("@query3", "%" + gde.gdeDesc + "%");
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            List<Guide> gdeList = new List<Guide>();
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 0)
+            {
+                gdeList = null;
+            }
+            else
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    int id = Convert.ToInt32(row["gdeCatID"]);
+                    string name = row["gdeCatName"].ToString();
+
+                    Guide objRate = new Guide(id, name);
+                    gdeList.Add(objRate);
+                }
+            }
+            return gdeList;
+        }
     }
 }

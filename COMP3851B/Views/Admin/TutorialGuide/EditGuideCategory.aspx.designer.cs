@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace COMP3851B.Views.Admin.TutorialGuide
+namespace COMP3851B.Views.Admin.CourseGuide
 {
 
 
-    public partial class EditGuideCategory
+    public partial class AddCourseCategory
     {
 
         /// <summary>

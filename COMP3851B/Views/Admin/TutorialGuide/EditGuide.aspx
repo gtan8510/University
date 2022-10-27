@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditGuide.aspx.cs" Inherits="COMP3851B.Views.Admin.TutorialGuide.EditGuide" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditGuide.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseGuide" ValidateRequest="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-      <!--summernote -->
+    <!--summernote -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -100,7 +100,7 @@
 
             <!--Description -->
             <div class="form-group">
-                <asp:Label ID="lblDesc" runat="server"  CssClass="col-2 control-label" Text="Enter the description of the tutorial guide"></asp:Label>
+                <asp:Label ID="lblDesc" runat="server"  CssClass="col-2 control-label" Text="Enter the description of the tutorial guide. This will be the content of your guide."></asp:Label>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="(Description cannot be empty)" ControlToValidate="txtSummernote" ForeColor="Red"></asp:RequiredFieldValidator>
                 <div class="col-12">
                     <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>                </div>
@@ -147,7 +147,7 @@
         </div>
     </div> 
 
-       <!-- JavaScripts -->
+    <!-- JavaScripts -->
 
     <!--summernote script -->
     <!--***************************************************************************************

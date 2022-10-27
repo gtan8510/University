@@ -1,15 +1,15 @@
-﻿using COMP3851B.BBL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
+using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
+using COMP3851B.BBL;
 
-namespace COMP3851B.Views.Admin.TutorialGuide
+namespace COMP3851B.Views.Admin.CourseGuide
 {
-    public partial class EditGuideCategory : System.Web.UI.Page
+    public partial class AddCourseCategory : System.Web.UI.Page
     {
         public List<Guide> catList; //List for storing Guide Category data
         protected void Page_Load(object sender, EventArgs e)

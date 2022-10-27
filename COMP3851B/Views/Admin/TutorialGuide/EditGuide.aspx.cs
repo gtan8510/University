@@ -1,16 +1,16 @@
-﻿using COMP3851B.BBL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
+using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
+using COMP3851B.BBL;
+using System.IO;
 
-namespace COMP3851B.Views.Admin.TutorialGuide
+namespace COMP3851B.Views.Admin.CourseGuide
 {
-    public partial class EditGuide : System.Web.UI.Page
+    public partial class AddCourseGuide : System.Web.UI.Page
     {
         public List<Guide> catList; //List for storing Guide Category data
         public List<Guide> gdeList; //List for storing Guide data
@@ -53,7 +53,7 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                 string title = txtTitle.Text;
                 string desc = txtSummernote.Text;
 
-                //Get thumbnail image file and upload it to project folder
+                    //Get thumbnail image file and upload it to project folder
                 var folder = Server.MapPath("~/uploads/");
                 string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
                 if (fileName == "")
@@ -71,7 +71,7 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                 }
                 UploadTmbnail.PostedFile.SaveAs(Server.MapPath(filePath));
 
-                Guide gde = new Guide(title, desc, filePath, id);
+                Guide gde = new Guide(title, desc, filePath,id);
                 try
                 {
                     //Add new Guide to database
@@ -111,7 +111,7 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                 string desc = txtSummernote.Text;
                 int id = Int32.Parse(Regex.Match(lblID.Text, @"\d+").Value);
 
-                //Get filename, if no new file name retrieve current thumbnail file
+                    //Get filename, if no new file name retrieve current thumbnail file
                 string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
                 if (fileName == "")
                 {
@@ -136,6 +136,7 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                         ddlCat.SelectedValue = "0";
                         UploadTmbnail.Attributes.Clear();
                         txtSummernote.Text = "";
+                        imgThumbnail.ImageUrl = "../../../Images/insertimage.png";
                         lblID.Text = "Guide ID: (No row selected)";
 
                         //Rebind updated data
@@ -154,11 +155,9 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                 catch //Internal code error
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when updating an item. Please contact the developers about the issue.')", true);
-
                 }
             }
         }
-
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string btnName = (sender as Button).Text;
@@ -170,6 +169,7 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                 ddlCat.SelectedValue = "0";
                 UploadTmbnail.Attributes.Clear();
                 txtSummernote.Text = "";
+                imgThumbnail.ImageUrl = "../../../Images/insertimage.png";
                 lblID.Text = "Guide ID: (No row selected)";
 
                 //Change back Save/Cancel buttons to default Add/Search
@@ -178,15 +178,21 @@ namespace COMP3851B.Views.Admin.TutorialGuide
             }
             else //Button name = "Search"
             {
-                //Get CategoryName field data
+                //Retrieve values from fields
+                string desc = txtSummernote.Text;
+                string title = txtTitle.Text;
+                int catid = Convert.ToInt32(ddlCat.SelectedValue);
 
+                Guide gde = new Guide(catid, title, desc);
                 try
                 {
-                    //Search database for matching substring
+                    gdeList = gde.SearchForGuide();
+                    GVgde.DataSource = gdeList;
+                    GVgde.DataBind();
                 }
                 catch //Internal code error
                 {
-
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when searching for an item. Please contact the developers about the issue.')", true);
                 }
             }
         }
@@ -214,6 +220,7 @@ namespace COMP3851B.Views.Admin.TutorialGuide
                     ddlCat.SelectedValue = "0";
                     UploadTmbnail.Attributes.Clear();
                     txtSummernote.Text = "";
+                    imgThumbnail.ImageUrl = "../../../Images/insertimage.png";
                     lblID.Text = "Guide ID: (No row selected)";
                 }
                 else //Unsuccessful

@@ -1,14 +1,13 @@
-﻿using COMP3851B.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using COMP3851B.DAL;
 
 namespace COMP3851B.BBL
 {
     public class Guide
     {
-
         //Guide Category Properties
         public int gdeCatID { get; set; }
         public string gdeCatName { get; set; }
@@ -34,6 +33,12 @@ namespace COMP3851B.BBL
         {
             this.gdeCatID = gdecatid;
             this.gdeCatName = gdecatname;
+        }
+        public Guide(int gdecatid, string gdetitle, string gdedesc)
+        {
+            this.gdeCatID = gdecatid;
+            this.gdeTitle = gdetitle;
+            this.gdeDesc = gdedesc;
         }
         public Guide(int gdeid, string gdetitle, string gdedesc, string imagepath)
         {
@@ -61,7 +66,7 @@ namespace COMP3851B.BBL
 
 
         //Methods
-        //Category Methods
+            //Category Methods
         public int AddCategory()
         {
             GuideDAO dao = new GuideDAO();
@@ -102,7 +107,7 @@ namespace COMP3851B.BBL
             return dao.SearchFor(substring);
         }
 
-        //Guide Methods
+            //Guide Methods
         public int AddGuide()
         {
             GuideDAO dao = new GuideDAO();
@@ -110,7 +115,7 @@ namespace COMP3851B.BBL
         }
         public List<Guide> GetAllGuides()
         {
-           GuideDAO dao = new GuideDAO();
+            GuideDAO dao = new GuideDAO();
             return dao.GetAllGuides();
         }
         public List<Guide> GetAllByCategory(int id)
@@ -135,6 +140,12 @@ namespace COMP3851B.BBL
         {
             GuideDAO dao = new GuideDAO();
             return dao.DeleteGuide(id);
+        }
+
+        public List<Guide> SearchForGuide()
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.SearchForGuide(this);
         }
     }
 }

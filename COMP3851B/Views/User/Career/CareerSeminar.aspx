@@ -34,22 +34,30 @@
             <h3 class="first-txt" style="font-size:50px;font-weight:bold;color:white">CAREER SEMINARS</h3>
             <h3 class="second-txt"  style="font-size:25px;font-weight:bold;color:white">Here are the upcoming career seminars organized by the school.</h3>
         </div>
-        <asp:Table ID="Table1" runat="server" Height="200px" Width="100%">  
-            <asp:TableRow runat="server">
-                <asp:TableCell runat="server" Width="30%"><img src="../../../Images/<?php echo $one_item['seminarImage'];?>" style="width:80%;height:auto"></asp:TableCell>  
-                <asp:TableCell runat="server" Width="40%"><p style="font-size:25px;font-weight:bold;padding:0px;margin:0px"><?php echo $one_item['seminarDate']; ?></p><div style="font-size:20px;font-weight:bold;"><?php echo $one_item['seminarName']; ?></div><?php echo $one_item['seminarDesc']; ?></asp:TableCell>  
-                <asp:TableCell runat="server" Width="30%"><?php echo $one_item['seminarLoc']; ?><br /><?php echo $one_item['seminarStarttime']; ?> - <?php echo $one_item['seminarEndtime']; ?><br />Open to: <?php echo $one_item['seminarOpenTo']; ?><br /><br /><button class="button">Register</button></asp:TableCell>  
-            </asp:TableRow>  
-            <asp:TableRow runat="server">  
-                <asp:TableCell runat="server" Width="30%"><img src="../../../Images/insert%20image.png" alt="seminarImage2" style="align-content:center;width:80%;height:auto"></asp:TableCell>  
-                <asp:TableCell runat="server" Width="40%"><p style="font-size:25px;font-weight:bold;padding:0px;margin:0px">seminarDate2</p><div style="font-size:20px;font-weight:bold;">seminarName2</div>seminarDesc2</asp:TableCell>  
-                <asp:TableCell runat="server" Width="30%">seminarLoc2<br />seminarStarttime2 - seminarEndtime2<br />Open to: seminarOpenTo2<br /><br /><button class="button">Register</button></asp:TableCell>  
-            </asp:TableRow>    
-            <asp:TableRow runat="server">  
-                <asp:TableCell runat="server" Width="30%"><img src="../../../Images/insert%20image.png" alt="seminarImage3" style="align-content:center;width:80%;height:auto"></asp:TableCell>  
-                <asp:TableCell runat="server" Width="40%"><p style="font-size:25px;font-weight:bold;padding:0px;margin:0px">seminarDate3</p><div style="font-size:20px;font-weight:bold;">seminarName3</div>seminarDesc3</asp:TableCell>  
-                <asp:TableCell runat="server" Width="30%">seminarLoc3<br />seminarStarttime3 - seminarEndtime3<br />Open to: seminarOpenTo3<br /><br /><button class="button">Register</button></asp:TableCell>  
-            </asp:TableRow>    
-        </asp:Table>
+        <table class="w-100">
+            <tr>
+                <td class="auto-style1">
+                    <asp:Image ID="Image1" runat="server" Height="200px" Width="350px" />
+                </td>
+                <td class="auto-style2">
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text="seminarName"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Large" Text="seminarDate"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label3" runat="server" Text="seminarDesc"></asp:Label>
+                </td>
+                <td><strong>Location:</strong>
+                    <asp:Label ID="Label4" runat="server" Text="seminarLoc"></asp:Label>
+                    <br />
+                    <strong>Time:
+                    <asp:Label ID="Label5" runat="server" Font-Bold="False" Text="seminarStarttime"></asp:Label>
+&nbsp;-
+                    <asp:Label ID="Label6" runat="server" Font-Bold="False" Text="seminarEndtime"></asp:Label>
+                    <br />
+                    Open To:
+                    <asp:Label ID="Label7" runat="server" Font-Bold="False" Text="seminarOpenTo"></asp:Label>
+                    </strong></td>
+            </tr>
+        </table>
     </div>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EditSeminar.aspx.cs" Inherits="COMP3851B.Views.Admin.Career.EditSeminar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditSeminar.aspx.cs" Inherits="COMP3851B.Views.Admin.Career.EditSeminar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -17,13 +17,13 @@
                     <asp:Button ID="btnRetrieve" runat="server" Font-Bold="True" OnClick="Button5_Click" Text="Retrieve Details" Width="150px" class="btn btn-success btn-rounded" />
                 </td>
             </tr>
-            <tr>
+            <!--<tr>
                 <td style="width: 73px">&nbsp;</td>
                 <td style="width: 172px">Seminar Image</td>
                 <td>
                     <asp:FileUpload ID="FileUpload1" runat="server" Width="291px" />
                 </td>
-            </tr>
+            </tr>-->
             <tr>
                 <td style="width: 73px">&nbsp;</td>
                 <td style="width: 172px">Seminar Date<br />(YYYY-MM-DD)</td>

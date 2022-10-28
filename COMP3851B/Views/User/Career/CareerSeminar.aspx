@@ -34,30 +34,51 @@
             <h3 class="first-txt" style="font-size:50px;font-weight:bold;color:white">CAREER SEMINARS</h3>
             <h3 class="second-txt"  style="font-size:25px;font-weight:bold;color:white">Here are the upcoming career seminars organized by the school.</h3>
         </div>
+
+        <asp:ListView ID="CareerSeminarView" DataSourceID="SeminarDataSource" runat="server">
+        <LayoutTemplate>
         <table class="w-100">
-            <tr>
-                <td class="auto-style1">
-                    <asp:Image ID="Image1" runat="server" Height="200px" Width="350px" />
+            <tr runat="server" class="header">
+              <th runat="server" colspan="3"></th>
+            </tr>
+            <tr runat="server" id="groupPlaceholder" />
+        </table>
+        </LayoutTemplate>    
+        <GroupTemplate>
+                <tr runat="server" id="ProductsRow">
+                    <td runat="server" id="itemPlaceholder" />
+                </tr>
+        </GroupTemplate>
+        <ItemTemplate>
+                <td runat="server" id="itemPlaceholder" />
+                
+                <td class="auto-style1" width="25%">
+                    <asp:Image ID="Image1" runat="server" Height="200px" Width="350px" ImageUrl='<%# "~/images/" + Eval("seminarImage") %>' />
                 </td>
-                <td class="auto-style2">
-                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text="seminarName"></asp:Label>
+                <td class="auto-style2" width="35%">
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text='<%# Eval("seminarName")%>'></asp:Label>
                     <br />
-                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Large" Text="seminarDate"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Large" Text='<%# Eval("seminarDate", "{0:dd/MM/yyyy}")%>'></asp:Label>
                     <br />
-                    <asp:Label ID="Label3" runat="server" Text="seminarDesc"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("seminarDesc")%>'></asp:Label>
                 </td>
-                <td><strong>Location:</strong>
-                    <asp:Label ID="Label4" runat="server" Text="seminarLoc"></asp:Label>
+                <td width="35%">
+                    <strong>Location:</strong>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Eval("seminarLoc")%>'></asp:Label>
                     <br />
                     <strong>Time:
-                    <asp:Label ID="Label5" runat="server" Font-Bold="False" Text="seminarStarttime"></asp:Label>
-&nbsp;-
-                    <asp:Label ID="Label6" runat="server" Font-Bold="False" Text="seminarEndtime"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Font-Bold="False" Text='<%# DateTime.Parse(Eval("seminarStarttime").ToString()).ToString("hh:mm tt")%>'></asp:Label> &nbsp;-
+                    <asp:Label ID="Label6" runat="server" Font-Bold="False" Text='<%# DateTime.Parse(Eval("seminarEndtime").ToString()).ToString("hh:mm tt")%>'></asp:Label>
                     <br />
                     Open To:
-                    <asp:Label ID="Label7" runat="server" Font-Bold="False" Text="seminarOpenTo"></asp:Label>
+                    <asp:Label ID="Label7" runat="server" Font-Bold="False" Text='<%# Eval("seminarOpenTo")%>'></asp:Label>
                     </strong></td>
-            </tr>
-        </table>
+                </ItemTemplate>
+        </asp:ListView>
     </div>
+
+    <asp:SqlDataSource ID="SeminarDataSource" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:My3851BConnectionString %>"
+        SelectCommand="select * from seminar">
+      </asp:SqlDataSource>
 </asp:Content>

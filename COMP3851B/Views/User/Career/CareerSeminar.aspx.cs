@@ -15,13 +15,13 @@ namespace COMP3851B.Views.User.CareerNew
         {
             if (!IsPostBack)
             {
-                LoadRecord();
+                //LoadRecord();
             }
         }
 
-        SqlConnection con = new SqlConnection("Data Source=LAPTOP-CKIA7PUJ\\SQLEXPRESS;Initial Catalog=COMP3851B;Integrated Security=True");
+        //SqlConnection con = new SqlConnection("Data Source=LAPTOP-CKIA7PUJ\\SQLEXPRESS;Initial Catalog=COMP3851B;Integrated Security=True");
 
-        void LoadRecord()
+        /*void LoadRecord()
         {
             con.Open();
             SqlCommand comm = new SqlCommand("select * from seminar", con);
@@ -44,6 +44,6 @@ namespace COMP3851B.Views.User.CareerNew
                 }
             }
             r.Close();
-        }
+        }*/
     }
 }

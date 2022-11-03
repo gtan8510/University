@@ -18,11 +18,11 @@
             margin-right: 10px;
         }
     </style>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-       <div class="main-content">
+    <div class="main-content">
         <header>
             <h1>
                 <asp:Label ID="Label2" runat="server" Text="Label">
@@ -50,85 +50,57 @@
 <div class="container"  style="margin-left: 280px">
 
     <div class="form-horizontal">
-        <h2>Edit Homepage Campus</h2>
+        <h2>Edit Homepage</h2>
         <hr />
 
         <div class="form-group">
-            <asp:Label ID="lblCCampusName" runat="server"  CssClass="col-md-2 control-label" Text=" Campus Name"></asp:Label>
+            <asp:Label ID="lblFacilityName" runat="server"  CssClass="col-md-2 control-label" Text="Facility Name"></asp:Label>
        <div class="col-md-3"> 
-           <asp:TextBox ID="txtCampusName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-            </div>
-      
-          <br /><br />
-
-        <div class="form-group">
-            <asp:Label ID="lblCampusImage" runat="server"  CssClass="col-md-2 control-label" Text="First Campus Image"></asp:Label>
-       <div class="col-md-3">
-            <asp:FileUpload ID="CampusImg" CssClass="form-control" runat="server" />
-       </div>
-        </div>
-            <br /><br />
-        <!--
-         <div class="form-group">
-            <asp:Label ID="lblSecondCampusName" runat="server"  CssClass="col-md-2 control-label" Text="Second Campus Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtSecondCampusname" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtFacilityName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
             </div>
       
             <br /><br />
 
-         
-        <div class="form-group">
-            <asp:Label ID="lblSecondCampusImage" runat="server"  CssClass="col-md-2 control-label" Text="Second Campus Image"></asp:Label>
+            <div class="form-group">
+            <asp:Label ID="lblFacilityDesc" runat="server"  CssClass="col-md-2 control-label" Text="Facility Desc"></asp:Label>
        <div class="col-md-3">
-            <asp:FileUpload ID="FuImgSecondCampus" CssClass="form-control" runat="server" />
+           <asp:TextBox ID="txtFacilityDesc" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
-        </div>
-            <br /><br />
-
-         <div class="form-group">
-            <asp:Label ID="lblThirdCampusName" runat="server"  CssClass="col-md-2 control-label" Text="Course Three Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtThirdCampusName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-            </div>
+                </div>
       
             <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblThirdCampusImage" runat="server"  CssClass="col-md-2 control-label" Text="Third Campus Image"></asp:Label>
+            <asp:Label ID="lblFacilityImage" runat="server"  CssClass="col-md-2 control-label" Text="Facility Image"></asp:Label>
        <div class="col-md-3">
-            <asp:FileUpload ID="FuThirdCampusImage" CssClass="form-control" runat="server" />
+            <asp:FileUpload ID="FuFacilityImg" CssClass="form-control" runat="server" />
        </div>
         </div>
-            <br /><br />-->
-
+            <br /><br />
+         <!--Add & Search / Edit& Cancel buttons -->
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" OnClick="btnCreate_Click" />
-                <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" />
             </div>
-        <br /><br />
+
+            <br />
+            <hr />
+
+         <!--Notice Label -->
+            <div>
+                <asp:Label ID="lblNotice" runat="server"  CssClass="col-12 control-label" ForeColor="Red"></asp:Label>
+            </div>
+            
+            <br />
+
+           
         <div class="gridview">
-            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-            </asp:GridView>
+            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
-                  
-    </div>
+               
+</div>
     </div> 
+
 
 </asp:Content>

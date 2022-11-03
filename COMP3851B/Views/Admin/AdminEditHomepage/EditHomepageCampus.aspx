@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-        <meta charset="utf-8">
+             <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../CSS/AdminStyle.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
@@ -18,11 +18,11 @@
             margin-right: 10px;
         }
     </style>
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="main-content">
+
+       <div class="main-content">
         <header>
             <h1>
                 <asp:Label ID="Label2" runat="server" Text="Label">
@@ -50,56 +50,59 @@
 <div class="container"  style="margin-left: 280px">
 
     <div class="form-horizontal">
-        <h2>Edit Homepage</h2>
+        <h2>Edit Homepage Campus</h2>
         <hr />
 
         <div class="form-group">
-            <asp:Label ID="lblFacilityName" runat="server"  CssClass="col-md-2 control-label" Text="Facility Name"></asp:Label>
+            <asp:Label ID="lblCCampusName" runat="server"  CssClass="col-md-2 control-label" Text=" Campus Name"></asp:Label>
        <div class="col-md-3"> 
-           <asp:TextBox ID="txtFacilityName" runat="server" CssClass="form-control"></asp:TextBox>
+           <asp:TextBox ID="txtCampusName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
             </div>
       
-            <br /><br />
-
-            <div class="form-group">
-            <asp:Label ID="lblFacilityDesc" runat="server"  CssClass="col-md-2 control-label" Text="Facility Desc"></asp:Label>
-       <div class="col-md-3">
-           <asp:TextBox ID="txtFacilityDesc" runat="server" CssClass="form-control"></asp:TextBox>
-       </div>
-                </div>
-      
-            <br /><br />
+          <br /><br />
 
         <div class="form-group">
-            <asp:Label ID="lblFacilityImage" runat="server"  CssClass="col-md-2 control-label" Text="Facility Image"></asp:Label>
+            <asp:Label ID="lblCampusImage" runat="server"  CssClass="col-md-2 control-label" Text="First Campus Image"></asp:Label>
        <div class="col-md-3">
-            <asp:FileUpload ID="FuFacilityImg" CssClass="form-control" runat="server" />
+            <asp:FileUpload ID="CampusImg" CssClass="form-control" runat="server" />
        </div>
         </div>
             <br /><br />
-         <!--Add & Search / Edit& Cancel buttons -->
+       
+
+              <!--Add & Search / Edit& Cancel buttons -->
             <div id="crud">
                 <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
-                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
             </div>
 
             <br />
             <hr />
 
-         <!--Notice Label -->
+            <!--Notice Label -->
             <div>
                 <asp:Label ID="lblNotice" runat="server"  CssClass="col-12 control-label" ForeColor="Red"></asp:Label>
             </div>
             
             <br />
-
-           
         <div class="gridview">
-            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+            </asp:GridView>
         </div>
-               
-</div>
+                  
+    </div>
     </div> 
 
 

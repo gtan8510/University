@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditHomepageFeedback.aspx.cs" Inherits="COMP3851B.Views.Admin.AdminEditHomepage.EditHomepageFeedback" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditHomepageFeedback.aspx.cs" Inherits="COMP3851B.Views.Admin.AdminEditHomepage.EditHomepageFeedback" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -48,70 +48,28 @@
           </div>
 
     <br />
-<div class="container"  style="margin-left: 280px">
 
-    <div class="form-horizontal">
-        <h2>Edit Homepage</h2>
-        <hr />
+      
 
-        <div class="form-group">
-            <asp:Label ID="lblFeedbackPersonName" runat="server"  CssClass="col-md-2 control-label" Text="Feeback Person Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtFeedbackPersonName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
+
+           
+
+         <!--Notice Label -->
+            <div>
+                <asp:Label ID="lblNotice" runat="server"  CssClass="col-12 control-label" ForeColor="Red"></asp:Label>
             </div>
-      
-            <br /><br />
-
-            <div class="form-group">
-            <asp:Label ID="lblFeedbackDesc" runat="server"  CssClass="col-md-2 control-label" Text="Feedback Desc"></asp:Label>
-       <div class="col-md-3">
-           <asp:TextBox ID="txtFeedbackDesc" runat="server" CssClass="form-control"></asp:TextBox>
-       </div>
-                </div>
-      
-            <br /><br />
-
-        <!--
-         <div class="form-group">
-            <asp:Label ID="lblSecondFeedbackName" runat="server"  CssClass="col-md-2 control-label" Text="Second Feedback Name"></asp:Label>
-       <div class="col-md-3"> 
-           <asp:TextBox ID="txtSecondFacility" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-            </div>
-      
-            <br /><br />
-
-            <div class="form-group">
-            <asp:Label ID="lblSecondFeedback" runat="server"  CssClass="col-md-2 control-label" Text="Second Feedback Desc"></asp:Label>
-       <div class="col-md-3">
-           <asp:TextBox ID="txtSecondFeedback" runat="server" CssClass="form-control"></asp:TextBox>
-       </div>
-                </div>
-      
-            <br /><br />
-        -->
-
-      
-
-
-            <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" OnClick="btnCreate_Click" />
-                <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
-            </div>
-        <br /><br />
+            
+            <br />
+       
 
         <div class="gridview">
-            <asp:GridView ID="GridViewStudentFeedback" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="StudentfeedbackID" DataSourceID="SqlStudentFeedbackData" ForeColor="#333333" GridLines="None" Width="898px">
+            <asp:GridView ID="GridViewStudentFeedback" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="feedbackID" DataSourceID="SqlStudentFeedbackData" ForeColor="#333333" GridLines="None" Width="898px">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                    <asp:BoundField DataField="StudentfeedbackID" HeaderText="StudentfeedbackID" InsertVisible="False" ReadOnly="True" SortExpression="StudentfeedbackID" />
-                    <asp:BoundField DataField="StudentNumber" HeaderText="StudentNumber" SortExpression="StudentNumber" />
-                    <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                    <asp:BoundField DataField="feedbackID" HeaderText="feedbackID" SortExpression="feedbackID" InsertVisible="False" ReadOnly="True" />
+                    <asp:BoundField DataField="studentID" HeaderText="studentID" SortExpression="studentID" />
+                    <asp:BoundField DataField="studentName" HeaderText="studentName" SortExpression="studentName" />
+                    <asp:BoundField DataField="studentFeedback" HeaderText="studentFeedback" SortExpression="studentFeedback" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -124,32 +82,10 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlStudentFeedbackData" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:FunUniversityConnectionString %>" DeleteCommand="DELETE FROM [StudentFeedback] WHERE [StudentfeedbackID] = @original_StudentfeedbackID AND (([StudentNumber] = @original_StudentNumber) OR ([StudentNumber] IS NULL AND @original_StudentNumber IS NULL)) AND (([Name] = @original_Name) OR ([Name] IS NULL AND @original_Name IS NULL)) AND (([Email] = @original_Email) OR ([Email] IS NULL AND @original_Email IS NULL))" InsertCommand="INSERT INTO [StudentFeedback] ([StudentNumber], [Name], [Email]) VALUES (@StudentNumber, @Name, @Email)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [StudentFeedback]" UpdateCommand="UPDATE [StudentFeedback] SET [StudentNumber] = @StudentNumber, [Name] = @Name, [Email] = @Email WHERE [StudentfeedbackID] = @original_StudentfeedbackID AND (([StudentNumber] = @original_StudentNumber) OR ([StudentNumber] IS NULL AND @original_StudentNumber IS NULL)) AND (([Name] = @original_Name) OR ([Name] IS NULL AND @original_Name IS NULL)) AND (([Email] = @original_Email) OR ([Email] IS NULL AND @original_Email IS NULL))">
-                <DeleteParameters>
-                    <asp:Parameter Name="original_StudentfeedbackID" Type="Int32" />
-                    <asp:Parameter Name="original_StudentNumber" Type="String" />
-                    <asp:Parameter Name="original_Name" Type="String" />
-                    <asp:Parameter Name="original_Email" Type="String" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="StudentNumber" Type="String" />
-                    <asp:Parameter Name="Name" Type="String" />
-                    <asp:Parameter Name="Email" Type="String" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="StudentNumber" Type="String" />
-                    <asp:Parameter Name="Name" Type="String" />
-                    <asp:Parameter Name="Email" Type="String" />
-                    <asp:Parameter Name="original_StudentfeedbackID" Type="Int32" />
-                    <asp:Parameter Name="original_StudentNumber" Type="String" />
-                    <asp:Parameter Name="original_Name" Type="String" />
-                    <asp:Parameter Name="original_Email" Type="String" />
-                </UpdateParameters>
+            <asp:SqlDataSource ID="SqlStudentFeedbackData" runat="server" ConnectionString="<%$ ConnectionStrings:FunUniversityConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [feedbackID], [studentID], [studentName], [studentFeedback] FROM [studentFeedback]">
             </asp:SqlDataSource>
         </div>
                 
-               
-</div>
-    </div> 
+
 
 </asp:Content>

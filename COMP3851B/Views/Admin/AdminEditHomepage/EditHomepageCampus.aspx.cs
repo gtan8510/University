@@ -11,87 +11,57 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
 {
     public partial class EditHomepageCampus : System.Web.UI.Page
     {
-        public List<Campus> campus;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uname"].ToString() != "admin")
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(),
-                    "alert",
-                    "alert('This page is only accessible to Admins');window.location ='UserHome.aspx';",
-                    true);
-
-            }
-            else
-            {
-                if (IsPostBack == false)
-                {
-                    txtCampusName.Text = "";
-
-
-                }
-            }
+         
         }
 
-        protected void btnCreate_Click(object sender, EventArgs e)
+       
+             protected void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+
+            string fileName = Path.GetFileName(CampusImg.PostedFile.FileName);
+            string contenType = CampusImg.PostedFile.ContentType;
+            using (Stream fs = CampusImg.PostedFile.InputStream)
             {
-                //Get text fields and add new course
-                string textCampusName = txtCampusName.Text;
-
-
-                //Create folder and file paths
-                var folder = Server.MapPath("~/uploadsCampus/");
-                string fileName = Path.GetFileName(CampusImg.PostedFile.FileName);
-                string filePath = "~/uploads/" + fileName;
-
-                lblCampusImage.Text = fileName.ToString();
-
-                //create new directory for product images
-                if (!Directory.Exists(folder))
+                using (BinaryReader br = new BinaryReader(fs))
                 {
-                    Directory.CreateDirectory(folder);
-                    //click 'Show All Files' to find folder
-
+                    byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                    string constr = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+                    using(SqlConnection con = new SqlConnection(constr))
+                    {
+                        string query = "Insert into Campus values ('" + CampusImg.FileName + "', '" + txtCampusName.Text + "')";
+                        using (SqlCommand cmd = new SqlCommand(query))
+                        {
+                            cmd.Connection = con;
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Successfully inserted');", true);
+                        }
+                    }
                 }
-                CampusImg.PostedFile.SaveAs(Server.MapPath(filePath));
-
-                //Initialise new Product object and add to db
-                Campus campus = new Campus(textCampusName, filePath);
-                int result = campus.AddCampus();
-
-                if (result == 1) //add successful
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(),
-                        "alert",
-                        "alert('New product added successfully!');window.location ='ListItem.aspx';",
-                        true);
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(),
-                        "alert",
-                        "alert('An error occured while adding product, please try again');window.location ='ListItem.aspx';",
-                        true);
-                }
-            }
-            catch
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(),
-                    "alert",
-                    "alert('An error has occured. Please contact the developers to fix this issue.');window.location ='AddItem.aspx';",
-                    true);
-            }
-
-
-
-
+         
 
         }
-
 
 
     }
+    
+       protected void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+        void loadRecord()
+        {
+            SqlCommand comm = new SqlCommand("Select Top 3 from Campus", con);
+            SqlDataAdapter d = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable();
+            d.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+}
 }
     

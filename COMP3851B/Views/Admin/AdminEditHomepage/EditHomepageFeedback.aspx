@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     
-       <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../CSS/AdminStyle.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
@@ -34,7 +34,7 @@
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <input type="search" placeholder="search here" />
+                <asp:TextBox ID="txtSearch" runat="server" placeholder="Search here"></asp:TextBox>
             </div>
             <div class="user-wrapper">
                 <img src="../../../Images/UONEditedLogo.png" width="30px" height="30px" alt="" />
@@ -48,10 +48,15 @@
           </div>
 
     <br />
+    <br />
+      <br />
+    <br />
+    <div class="container"  style="margin-left: 280px">
 
-      
 
-
+     <div id="crud">
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
+            </div>
            
 
          <!--Notice Label -->
@@ -63,7 +68,7 @@
        
 
         <div class="gridview">
-            <asp:GridView ID="GridViewStudentFeedback" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="feedbackID" DataSourceID="SqlStudentFeedbackData" ForeColor="#333333" GridLines="None" Width="898px">
+            <asp:GridView ID="GridViewStudentFeedback" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="feedbackID" DataSourceID="SqlStudentFeedbackData"  CssClass="table table-condensed table-hover" Width="50%">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:BoundField DataField="feedbackID" HeaderText="feedbackID" SortExpression="feedbackID" InsertVisible="False" ReadOnly="True" />
@@ -86,6 +91,5 @@
             </asp:SqlDataSource>
         </div>
                 
-
-
+        </div>
 </asp:Content>

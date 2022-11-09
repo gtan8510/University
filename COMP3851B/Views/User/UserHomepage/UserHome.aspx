@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../../../CSS/style.css" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="header">
+   <section class="header">
     <div id="backgroundImage"></div>
     <div class ="text-box">
         <h1>Sydney's Most Trusted University</h1>
@@ -17,123 +17,121 @@
     </div>
     </section>
     <section class="course">
-        <h1>Course We Offer</h1>
+        <h1>Quotes</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-        <div class="row">
-            <div class="course-col">
-                <h3>Intermediate</h3>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
-            <div class="course-col">
-                <h3>Degree</h3>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
-            <div class="course-col">
-                <h3>Post-Graduate</h3>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
-        </div>
+        
+        <asp:ListView ID="LVQuotes" runat="server" >
+            <LayoutTemplate>
+                <table>
+                    <tr class="row">
+                        
+                        <asp:PlaceHolder ID="ItemPlaceholder" runat="server"></asp:PlaceHolder>
+                    
+                    </tr>
+                </table>
+            </LayoutTemplate>
+            
+            <ItemTemplate>
+                <td class="course-col"> 
+               <h3><%#Eval("quotePerson") %></h3>
+                <p><%#Eval("quote") %></p>       
+                </td>
+            </ItemTemplate>
+        </asp:ListView>
     </section>
     <section class="campus">
         <h1> Our Global Campus</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <div class="row">
-            <div class="campus-col">
-        <img src="../../../Images/school2.jpeg" />    
-                <div class="layer">
-                    <h3>Sydney</h3>
-                </div>
-        </div>
+        <asp:ListView ID="LVCampus" runat="server">
+            <LayoutTemplate>
+                <table>
+                    <tr class="row">
+                        
+                        <asp:PlaceHolder ID="ItemPlaceholder" runat="server"></asp:PlaceHolder>
+                    
+                    </tr>
+                </table>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <td class="campus-col">
+                    <div>
+                 <img src="../../../<%#Eval("campusImg") %>" alt="" class= "" height="250px" width="420px" /></a>
+                    <div class="layer">
+                    <h3><%#Eval("campusLoc") %></h3>
 
-                  <div class="campus-col">
-        <img src="../../../Images/UON2.jpg" />    
-                <div class="layer">
-                    <h3>Newcastle Drive</h3>
+                    </div>
+                   </td>
+              
                 </div>
-        </div>
 
-                  <div class="campus-col">
-        <img src="../../../Images/UON3.jpg" />    
-                <div class="layer">
-                    <h3>Singapore</h3>
-                </div>
-        </div>
+            </ItemTemplate>
+        </asp:ListView>
+       
 
-        </div>
+      
     </section>
 
     <section class="facilities">
         <h1> Our Facilities </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-         <div class="row">
-            <div class="facilities-col">
-        <img src="../../../Images/library.jpg" />    
-                
-                    <h3>World Class Library</h3>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
+        <asp:ListView ID="LVFacility" runat="server">
+            <LayoutTemplate>
+             <table>
+                    <tr class="row">
+                        
+                        <asp:PlaceHolder ID="ItemPlaceholder" runat="server"></asp:PlaceHolder>
+                    
+                    </tr>
+                </table>
 
-                  <div class="facilities-col">
-        <img src="../../../Images/compLab.jpg" />    
-                
-                    <h3>Computer Lab</h3>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
+            </LayoutTemplate>
 
-                  <div class="facilities-col">
-        <img src="../../../Images/playground.jpg" />    
-               
-                    <h3>World Class Playground</h3>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
+             <ItemTemplate>
+                <td class="facilities-col"> 
+                <img src="../../../<%#Eval("FacilityPict") %>" alt="" class= "" height="200px" width="350px" /></a>
+               <h3><%#Eval("facilityName") %></h3>
+                <p><%#Eval("facilityDesc") %></p>       
+                </td>
+            </ItemTemplate>
+        </asp:ListView>
 
-        </div>
     </section>
 
     <section class="testimonial">
         <h1>What Our Student Says</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <asp:ListView ID="LVTestimonial" runat="server">
+             <LayoutTemplate>
+                <table>
+                    <tr class="row">
+                        
+                        <asp:PlaceHolder ID="ItemPlaceholder" runat="server"></asp:PlaceHolder>
+                    
+                    </tr>
+                </table>
+            </LayoutTemplate>
+             <ItemTemplate>
+                <td class="testimonial-col">
+                    
+                    <img src="../../../Images/man.png" />
+                   
+                 
+                   <div>
+                    <p><%#Eval("studentFeedback") %></p>
+                        <h3><%#Eval("studentName") %></h3>
+                       </div>
+                    
+                   </td>
+              
+                
 
-        <div class="row">
-            <div class="testimonial-col">
-                <img src="../../../Images/man.png" />
-                <div>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <h3>Jason Chandra</h3>
-                      <i class="fas fa-star"></i>
-                     <i class="fas fa-star"></i>
-                     <i class="fas fa-star"></i>
-                     <i class="fas fa-star"></i>
-                     <i class="fas fa-star-half-o"></i>
-                </div>
-            </div>
-
-            <div class="testimonial-col">
-                <img src="../../../Images/woman.png" />
-                <div>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <h3>Amanda barkley</h3>
-                    <i class="fas fa-star"></i>
-                     <i class="fas fa-star"></i>
-                     <i class="fas fa-star"></i>
-                     <i class="fas fa-star"></i>
-                     <i class="fas fa-star-o"></i>
-                </div>
-            </div>
-        </div>
+            </ItemTemplate>
+        </asp:ListView>
+    
     </section>
 
-    <section class="contactUs">
+     <section class="contactUs">
         <h1>Enroll for our course in the future from anywhere around the world</h1>
         <a href="ContactUs.aspx" class="contactBtn">CONTACT US</a>
     </section>

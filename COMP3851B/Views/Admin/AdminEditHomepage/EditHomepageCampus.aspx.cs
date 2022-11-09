@@ -51,7 +51,24 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
     
        protected void btnSearch_Click(object sender, EventArgs e)
         {
+            string DbConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(DbConnect);
+            string ins = "Select * from Campus where (campusLoc like '%' +@campusLoc + '%')";
+            SqlCommand cmd = new SqlCommand(ins, con);
+            cmd.Parameters.Add("@campusLoc", SqlDbType.NVarChar).Value = txtSearch.Text;
+            con.Open();
+            cmd.ExecuteNonQuery();
 
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds, "campusLoc");
+            GridView1.DataSourceID = null;
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+            con.Close();
+            lblNotice.Text = "Data has been selected";
+            
         }
         void loadRecord()
         {

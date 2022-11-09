@@ -56,7 +56,7 @@
     margin-left: 280px;
 }
 
-.header {
+header {
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;

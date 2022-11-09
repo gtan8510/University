@@ -24,6 +24,15 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
+        /// txtSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
+
+        /// <summary>
         /// lblFacilityName control.
         /// </summary>
         /// <remarks>
@@ -112,5 +121,14 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// facilityDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource facilityDS;
     }
 }

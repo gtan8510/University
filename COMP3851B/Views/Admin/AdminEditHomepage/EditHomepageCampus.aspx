@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-             <meta charset="utf-8">
+              <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../CSS/AdminStyle.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
@@ -33,7 +33,7 @@
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <input type="search" placeholder="search here" />
+                <asp:TextBox ID="txtSearch" runat="server" placeholder="Search here"></asp:TextBox>
             </div>
             <div class="user-wrapper">
                 <img src="../../../Images/UONEditedLogo.png" width="30px" height="30px" alt="" />
@@ -45,7 +45,9 @@
 
         </header>
           </div>
-
+    <br />
+    <br />
+    <br />
     <br />
 <div class="container"  style="margin-left: 280px">
 
@@ -87,8 +89,14 @@
             
             <br />
         <div class="gridview">
-            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GridView1" runat="server" CellPadding="4"  GridLines="None" AutoGenerateColumns="False" DataKeyNames="campusID" DataSourceID="SqlDataSource1" CssClass="table table-condensed table-hover" Width="50%">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:BoundField DataField="campusID" HeaderText="campusID" InsertVisible="False" ReadOnly="True" SortExpression="campusID" />
+                    <asp:BoundField DataField="campusLoc" HeaderText="campusLoc" SortExpression="campusLoc" />
+                    <asp:BoundField DataField="campusImg" HeaderText="campusImg" SortExpression="campusImg" />
+                </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -100,10 +108,23 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FunUniversityConnectionString %>" DeleteCommand="DELETE FROM [Campus] WHERE [campusID] = @campusID" InsertCommand="INSERT INTO [Campus] ([campusLoc], [campusImg]) VALUES (@campusLoc, @campusImg)" SelectCommand="SELECT * FROM [Campus]" UpdateCommand="UPDATE [Campus] SET [campusLoc] = @campusLoc, [campusImg] = @campusImg WHERE [campusID] = @campusID">
+                <DeleteParameters>
+                    <asp:Parameter Name="campusID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="campusLoc" Type="String" />
+                    <asp:Parameter Name="campusImg" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="campusLoc" Type="String" />
+                    <asp:Parameter Name="campusImg" Type="String" />
+                    <asp:Parameter Name="campusID" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </div>
                   
     </div>
     </div> 
-
 
 </asp:Content>

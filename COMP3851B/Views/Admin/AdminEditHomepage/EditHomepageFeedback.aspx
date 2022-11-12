@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     
-     <meta charset="utf-8">
+       <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../CSS/AdminStyle.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
@@ -68,9 +68,10 @@
        
 
         <div class="gridview">
-            <asp:GridView ID="GridViewStudentFeedback" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="feedbackID" DataSourceID="SqlStudentFeedbackData"  CssClass="table table-condensed table-hover" Width="50%">
+            <asp:GridView ID="GridViewStudentFeedback" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="feedbackID" DataSourceID="SqlStudentFeedbackData"  CssClass="table table-condensed table-hover" Width="50%" OnSelectedIndexChanged="GridViewStudentFeedback_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="feedbackID" HeaderText="feedbackID" SortExpression="feedbackID" InsertVisible="False" ReadOnly="True" />
                     <asp:BoundField DataField="studentID" HeaderText="studentID" SortExpression="studentID" />
                     <asp:BoundField DataField="studentName" HeaderText="studentName" SortExpression="studentName" />
@@ -87,9 +88,24 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlStudentFeedbackData" runat="server" ConnectionString="<%$ ConnectionStrings:FunUniversityConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [feedbackID], [studentID], [studentName], [studentFeedback] FROM [studentFeedback]">
+            <asp:SqlDataSource ID="SqlStudentFeedbackData" runat="server" ConnectionString="<%$ ConnectionStrings:FunUniversityConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [feedbackID], [studentID], [studentName], [studentFeedback] FROM [studentFeedback]" DeleteCommand="DELETE FROM [studentFeedback] WHERE [feedbackID] = @original_feedbackID" InsertCommand="INSERT INTO [studentFeedback] ([studentID], [studentName], [studentFeedback]) VALUES (@studentID, @studentName, @studentFeedback)" UpdateCommand="UPDATE [studentFeedback] SET [studentID] = @studentID, [studentName] = @studentName, [studentFeedback] = @studentFeedback WHERE [feedbackID] = @original_feedbackID">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_feedbackID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="studentID" Type="String" />
+                    <asp:Parameter Name="studentName" Type="String" />
+                    <asp:Parameter Name="studentFeedback" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="studentID" Type="String" />
+                    <asp:Parameter Name="studentName" Type="String" />
+                    <asp:Parameter Name="studentFeedback" Type="String" />
+                    <asp:Parameter Name="original_feedbackID" Type="Int32" />
+                </UpdateParameters>
             </asp:SqlDataSource>
         </div>
                 
         </div>
+
 </asp:Content>

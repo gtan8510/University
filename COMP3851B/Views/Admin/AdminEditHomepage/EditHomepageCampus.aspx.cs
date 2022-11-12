@@ -11,6 +11,8 @@ namespace COMP3851B.Views.Admin.AdminEditHomepage
 {
     public partial class EditHomepageCampus : System.Web.UI.Page
     {
+    
+         string a;
         
         protected void Page_Load(object sender, EventArgs e)
         {

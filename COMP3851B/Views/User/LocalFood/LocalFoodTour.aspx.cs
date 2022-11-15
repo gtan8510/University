@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace COMP3851B.Views.User.Explore
+namespace COMP3851B.Views.User.Explore.FoodTour
 {
     public partial class LocalFoodTour : System.Web.UI.Page
     {

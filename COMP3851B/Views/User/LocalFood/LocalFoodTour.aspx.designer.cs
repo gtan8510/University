@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace COMP3851B.Views.User.Explore
+namespace COMP3851B.Views.User.Explore.FoodTour
 {
 
 
@@ -15,21 +15,21 @@ namespace COMP3851B.Views.User.Explore
     {
 
         /// <summary>
-        /// Table1 control.
+        /// FoodSeminarList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.DataList FoodSeminarList;
 
         /// <summary>
-        /// Table2 control.
+        /// FoodTourDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table2;
+        protected global::System.Web.UI.WebControls.SqlDataSource FoodTourDataSource;
     }
 }

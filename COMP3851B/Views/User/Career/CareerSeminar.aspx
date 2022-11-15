@@ -31,10 +31,10 @@
     <!--Content Title-->
         <div class="row">
             <img src="../../../Images/careersembanner.png" alt="semBanner" style="width:100%;height:auto">
-            <h3 class="first-txt" style="font-size:50px;font-weight:bold;color:white">CAREER SEMINARS</h3>
-            <h3 class="second-txt"  style="font-size:25px;font-weight:bold;color:white">Here are the upcoming career seminars organized by the school.</h3>
+            <h3 class="first-txt" style="font-size:50px;font-weight:bold;color:white;width:500px">CAREER SEMINARS</h3>
+            <h3 class="second-txt"  style="font-size:25px;font-weight:bold;color:white;width:800px">Here are the upcoming career seminars organized by the school.</h3>
         </div>
-
+        <hr />
         <asp:ListView ID="CareerSeminarView" DataSourceID="SeminarDataSource" runat="server">
         <LayoutTemplate>
         <table class="w-100">
@@ -51,7 +51,6 @@
         </GroupTemplate>
         <ItemTemplate>
                 <td runat="server" id="itemPlaceholder" />
-                
                 <td class="auto-style1" width="25%">
                     <asp:Image ID="Image1" runat="server" Height="200px" Width="350px" ImageUrl='<%# "~/images/" + Eval("seminarImage") %>' />
                 </td>
@@ -72,13 +71,14 @@
                     <br />
                     Open To:
                     <asp:Label ID="Label7" runat="server" Font-Bold="False" Text='<%# Eval("seminarOpenTo")%>'></asp:Label>
-                    </strong></td>
+                    </strong>
+                </td>
                 </ItemTemplate>
         </asp:ListView>
     </div>
 
     <asp:SqlDataSource ID="SeminarDataSource" runat="server" 
         ConnectionString="<%$ ConnectionStrings:My3851BConnectionString %>"
-        SelectCommand="select * from seminar">
+        SelectCommand="select * from seminar order by seminarDate">
       </asp:SqlDataSource>
 </asp:Content>

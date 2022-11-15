@@ -33,7 +33,7 @@ namespace COMP3851B.Views.Admin.Career
                 using (BinaryReader br = new BinaryReader(fs))
                 {
                     byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                    string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+                    string constr = ConfigurationManager.ConnectionStrings["My3851BConnectionString"].ConnectionString;
                     using (SqlConnection con = new SqlConnection(constr))
                     {
                         string query = "Insert into seminar values('" + FileUpload1.FileName + "','" + TextBox8.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox5.Text + "','" + TextBox6.Text + "','" + TextBox7.Text + "')";
@@ -49,7 +49,6 @@ namespace COMP3851B.Views.Admin.Career
                     }
                 }
             }
-
                         //con.Open();
                         //SqlCommand comm = new SqlCommand("Insert into seminar values('" + FileUpload1.FileName + "','" + TextBox8.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox5.Text + "','" + TextBox6.Text + "','" + TextBox7.Text + "')", con);
                         //comm.ExecuteNonQuery();

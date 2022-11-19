@@ -42,15 +42,6 @@
                         <a class="nav-link" href="../StudentFeedback/StudentFeedback.aspx" style ="color :black ">Feedback</a>
                     </li>
 
-            <!--Club -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Club/ClubCategory.aspx" style ="color :black ">Club</a>
-                    </li>
-
-            <!-- Course -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="../CourseGuide/CourseGuideDetails.aspx" style ="color :black ">Course</a>
-                    </li>
             <!-- Guide -->
                     <li class="nav-item dropdown" >
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" style ="color :black ">Guides</a>

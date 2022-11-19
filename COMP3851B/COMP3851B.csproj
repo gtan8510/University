@@ -116,19 +116,11 @@
     <Content Include="Views\Admin\AdminHome\AdminHome.aspx" />
     <Content Include="Views\Admin\AdminLoginAndRegister\AdminRegister.aspx" />
     <Content Include="Views\Admin\AdminLoginAndRegister\Login.aspx" />
-    <Content Include="Views\Admin\Club\AddClub.aspx" />
-    <Content Include="Views\Admin\Club\AddClubEvent.aspx" />
-    <Content Include="Views\Admin\Club\DisplayAllClub.aspx" />
-    <Content Include="Views\Admin\Club\EditClub.aspx" />
     <Content Include="Views\Admin\Sports\EditESports.aspx" />
     <Content Include="Views\Admin\Sports\EditSports.aspx" />
     <Content Include="Views\Admin\TutorialGuide\EditGuide.aspx" />
     <Content Include="Views\Admin\TutorialGuide\EditGuideCategory.aspx" />
     <Content Include="Views\User\Career\CareerSeminar.aspx" />
-    <Content Include="Views\User\Club\ClubCategory.aspx" />
-    <Content Include="Views\User\Club\ClubDetail.aspx" />
-    <Content Include="Views\User\CourseGuide\CourseGuideDetails.aspx" />
-    <Content Include="Views\User\CourseGuide\CourseGuideSearch.aspx" />
     <Content Include="Views\User\StudentFeedback\StudentFeedback.aspx" />
     <Content Include="Views\User\TutorialGuide\GuideCategory.aspx" />
     <Content Include="Views\User\TutorialGuide\GuideDetails.aspx" />
@@ -253,68 +245,12 @@
     <Compile Include="Views\User\Campus\Campus History and Acihivement.aspx.designer.cs">
       <DependentUpon>Campus History and Acihivement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Club\AddClub.aspx.cs">
-      <DependentUpon>AddClub.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\Club\AddClub.aspx.designer.cs">
-      <DependentUpon>AddClub.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Club\AddClubEvent.aspx.cs">
-      <DependentUpon>AddClubEvent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\Club\AddClubEvent.aspx.designer.cs">
-      <DependentUpon>AddClubEvent.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Club\DisplayAllClub.aspx.cs">
-      <DependentUpon>DisplayAllClub.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\Club\DisplayAllClub.aspx.designer.cs">
-      <DependentUpon>DisplayAllClub.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Club\EditClub.aspx.cs">
-      <DependentUpon>EditClub.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\Club\EditClub.aspx.designer.cs">
-      <DependentUpon>EditClub.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\User\Career\CareerSeminar.aspx.cs">
       <DependentUpon>CareerSeminar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\User\Career\CareerSeminar.aspx.designer.cs">
       <DependentUpon>CareerSeminar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\Club\ClubCategory.aspx.cs">
-      <DependentUpon>ClubCategory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\Club\ClubCategory.aspx.designer.cs">
-      <DependentUpon>ClubCategory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\Club\ClubDetail.aspx.cs">
-      <DependentUpon>ClubDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\Club\ClubDetail.aspx.designer.cs">
-      <DependentUpon>ClubDetail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideDetails.aspx.cs">
-      <DependentUpon>CourseGuideDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideDetails.aspx.designer.cs">
-      <DependentUpon>CourseGuideDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideSearch.aspx.cs">
-      <DependentUpon>CourseGuideSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideSearch.aspx.designer.cs">
-      <DependentUpon>CourseGuideSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\Campus\Campus Event.aspx.cs">
       <DependentUpon>Campus Event.aspx</DependentUpon>

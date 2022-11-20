@@ -21,6 +21,7 @@ namespace COMP3851B.Views.Admin.Career
 
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-CKIA7PUJ\\SQLEXPRESS;Initial Catalog=COMP3851B;Integrated Security=True");
 
+        /*Load all database record*/
         void LoadRecord()
         {
             SqlCommand comm = new SqlCommand("select * from seminar", con);
@@ -35,7 +36,7 @@ namespace COMP3851B.Views.Admin.Career
         protected void Button2_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand comm = new SqlCommand("Update seminar set seminarDate = '" + TextBox8.Text + "', seminarName = '" + TextBox2.Text + "', seminarDesc = '" + TextBox3.Text + "', seminarLoc = '" + TextBox4.Text + "', seminarStartTime = '" + TextBox5.Text + "', seminarEndTime = '" + TextBox6.Text + "', seminarOpenTo = '" + TextBox7.Text + "' where seminarID = '" + TextBox1.Text + "'", con);
+            SqlCommand comm = new SqlCommand("Update seminar set seminarImage = '" + FileUpload1.FileName + "', seminarDate = '" + TextBox8.Text + "', seminarName = '" + TextBox2.Text + "', seminarDesc = '" + TextBox3.Text + "', seminarLoc = '" + TextBox4.Text + "', seminarStartTime = '" + TextBox5.Text + "', seminarEndTime = '" + TextBox6.Text + "', seminarOpenTo = '" + TextBox7.Text + "' where seminarID = '" + TextBox1.Text + "'", con);
             comm.ExecuteNonQuery();
             con.Close();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Successfully updated');", true);
@@ -53,7 +54,7 @@ namespace COMP3851B.Views.Admin.Career
             LoadRecord();
         }
 
-        /*Retrieve button*/
+        /*Retrieve details button*/
         protected void Button5_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -61,7 +62,7 @@ namespace COMP3851B.Views.Admin.Career
             SqlDataReader r = comm.ExecuteReader();
             while (r.Read())
             {
-                TextBox8.Text = r.GetValue(2).ToString(); //Date
+                TextBox8.Text = r.GetDateTime(2).ToString("yyyy-MM-dd"); //Date
                 TextBox2.Text = r.GetValue(3).ToString(); //Name
                 TextBox3.Text = r.GetValue(4).ToString(); //Description
                 TextBox4.Text = r.GetValue(5).ToString(); //Location

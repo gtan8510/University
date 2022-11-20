@@ -32,7 +32,7 @@ namespace COMP3851B.Views.Admin.FoodTour
         protected void Button2_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand comm = new SqlCommand("Update localFood set foodName = '" + TextBox9.Text + "', foodLoc = '" + TextBox11.Text + "', foodRecLvl = '" + TextBox12.Text + "', foodPrice = '" + TextBox13.Text + "', foodDesc = '" + TextBox10.Text + "' where foodID = '" + TextBox1.Text + "'", con);
+            SqlCommand comm = new SqlCommand("Update localFood set foodName = '" + TextBox9.Text + "', foodImage = '" + FileUpload2.FileName + "', foodLoc = '" + TextBox11.Text + "', foodRecLvl = '" + TextBox12.Text + "', foodPrice = '" + TextBox13.Text + "', foodDesc = '" + TextBox10.Text + "' where foodID = '" + TextBox1.Text + "'", con);
             comm.ExecuteNonQuery();
             con.Close();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Successfully updated');", true);

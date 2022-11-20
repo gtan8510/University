@@ -19,18 +19,8 @@ namespace COMP3851B.Views.User.TutorialGuide
                 Guide gde = new Guide();
                 gdeList = gde.GetAllByCategory(id);
                 gde = gde.GetOneCategory(id);
-                lblHeader.InnerText = "Search " + gde.gdeCatName;
+                lblHeader.Text = "Search " + gde.gdeCatName;
 
-                if (gdeList == null)
-                {
-                    txtSearch.Visible = false;
-                    btnSearch.Visible = false;
-                }
-                else
-                {
-                    txtSearch.Visible = true;
-                    btnSearch.Visible = true;
-                }
                 ListView1.DataSource = gdeList;
                 ListView1.DataBind();
             }

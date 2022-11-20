@@ -50,8 +50,8 @@
             background-color: white;
         }
         .jumbotron{
-            background:url(../../../Images/Support-header.jpg) no-repeat;
-            background-size: 100% 100%;
+            background:url(../../../Images/whitedesk3.jpg) no-repeat;
+            background-size: cover;
             min-height:380px;
             position:relative;
             z-index:-99;
@@ -86,36 +86,35 @@
         .fa fa-search{
             font-size:2em;
         }
+        .lblHeader{
+              position: absolute;
+              left: 50%!important;
+              color: black;
+              text-align: center;
+              top: 50%!important;
+              transform: translate(-50%, -50%);
+              width: fit-content;
+              padding: 50px;
+              font-size: 50px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="margin-top:50px;">
-        <div class="jumbotron">
-            <div class="container">
-                <h3 id="H1" runat="server" style="color:white;">Seach Example</h3>
+        <div class="jumbotron d-flex justify-content-center">
+            <div class="container header">
+                <asp:Label ID="lblHeader" runat="server" class="lblHeader" Text="Search Example"></asp:Label>
             </div>
         </div>
 
         <div class="container search">
             <div style="display:flex; flex-direction:row;">
-                <asp:TextBox ID="TextBox2" class="form-control txtSearch" type="search" placeholder="Search" aria-label="Search" runat="server"></asp:TextBox>
-                <asp:LinkButton runat="server" ID="LinkButton2" CssClass="btnSearch"><i class="fa fa-search fa-3x" aria-hidden="true"></i></asp:LinkButton>
+                <asp:TextBox ID="tbSearch" class="form-control txtSearch" type="search" placeholder="Search" aria-label="Search" runat="server"></asp:TextBox>
+                <asp:LinkButton runat="server" ID="lbSearch" CssClass="btnSearch"><i class="fa fa-search fa-3x" aria-hidden="true"></i></asp:LinkButton>
             </div>
         </div>
-        <!--<h3 id="lblHeader" runat="server"></h3>
-
-        <br />
-
-        <div class="container">
-            <div class="input-group mb-3">
-                <asp:TextBox ID="txtSearch" class="form-control col-8" type="search" placeholder="Search" aria-label="Search" runat="server"></asp:TextBox>
-              <div class="input-group-append">
-                <asp:Button ID="btnSearch" class="btn btn-outline-success col-4" runat="server" Text="Search" style="z-index:-1;"/>
-              </div>
-            </div>      
-        </div>-->
 
         <div class="container">
             <div class="col-md-12 pt-1">

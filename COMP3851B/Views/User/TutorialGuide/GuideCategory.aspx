@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <meta name="viewport" content="width-device-width, initial scale=1.0" />
     <link rel="stylesheet" href="../../../CSS/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         td{
             display:inline-block;
@@ -33,7 +34,7 @@
         .outer{
             border: none;
         }
-        .content{
+        .content, .search{
             border-radius:10px;
             background: #fff;
             box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
@@ -46,15 +47,64 @@
             box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
         }
         body, .outer{
-            background-color: lightgrey;
+            background-color: white;
+        }
+        .jumbotron{
+            background:url(../../../Images/Support-header.jpg) no-repeat;
+            background-size: 100% 100%;
+            min-height:380px;
+            position:relative;
+            z-index:-99;
+        }
+        .form-control{
+            -webkit-border-top-left-radius: 30px;
+            -webkit-border-bottom-left-radius: 30px;
+            -moz-border-radius-topleft: 30px;
+            -moz-border-radius-bottomleft: 30px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            -webkit-border-top-right-radius: 30px;
+            -webkit-border-bottom-right-radius: 30px;
+            -moz-border-radius-topright: 30px;
+            -moz-border-radius-bottomright: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            
+        }
+        .btnSearch{
+            margin-left:10px;
+        }
+        .search{
+            margin-top: -45px;
+            border:1px solid white;
+            padding: 20px 20px 20px 20px;
+            background-color:white;
+        }
+        .txtSearch, btnSearch{
+            height:52px;
+        }
+        .fa fa-search{
+            font-size:2em;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-top:100px;">
-        <h3 id="lblHeader" runat="server"></h3>
+    <div style="margin-top:50px;">
+        <div class="jumbotron">
+            <div class="container">
+                <h3 id="H1" runat="server" style="color:white;">Seach Example</h3>
+            </div>
+        </div>
+
+        <div class="container search">
+            <div style="display:flex; flex-direction:row;">
+                <asp:TextBox ID="TextBox2" class="form-control txtSearch" type="search" placeholder="Search" aria-label="Search" runat="server"></asp:TextBox>
+                <asp:LinkButton runat="server" ID="LinkButton2" CssClass="btnSearch"><i class="fa fa-search fa-3x" aria-hidden="true"></i></asp:LinkButton>
+            </div>
+        </div>
+        <!--<h3 id="lblHeader" runat="server"></h3>
 
         <br />
 
@@ -65,7 +115,7 @@
                 <asp:Button ID="btnSearch" class="btn btn-outline-success col-4" runat="server" Text="Search" style="z-index:-1;"/>
               </div>
             </div>      
-        </div>
+        </div>-->
 
         <div class="container">
             <div class="col-md-12 pt-1">

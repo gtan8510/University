@@ -24,6 +24,13 @@
             top: 300px;
             left: 50px;
         }
+
+        .center {
+            display: block;
+            margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -51,8 +58,8 @@
         </GroupTemplate>
         <ItemTemplate>
                 <td runat="server" id="itemPlaceholder" />
-                <td class="auto-style1" width="25%">
-                    <asp:Image ID="Image1" runat="server" Height="200px" Width="350px" ImageUrl='<%# "~/images/" + Eval("seminarImage") %>' />
+                <td class="center" width="25%">
+                    <asp:Image ID="Image1" runat="server" Height="200px" Width="275px" ImageUrl='<%# "~/images/" + Eval("seminarImage") %>' />
                 </td>
                 <td class="auto-style2" width="35%">
                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text='<%# Eval("seminarName")%>'></asp:Label>
@@ -66,7 +73,7 @@
                     <asp:Label ID="Label4" runat="server" Text='<%# Eval("seminarLoc")%>'></asp:Label>
                     <br />
                     <strong>Time:
-                    <asp:Label ID="Label5" runat="server" Font-Bold="False" Text='<%# DateTime.Parse(Eval("seminarStarttime").ToString()).ToString("hh:mm tt")%>'></asp:Label> &nbsp;-
+                    <asp:Label ID="Label5" runat="server" Font-Bold="False" Text='<%# DateTime.Parse(Eval("seminarStarttime").ToString()).ToString("hh:mm tt")%>'></asp:Label> to
                     <asp:Label ID="Label6" runat="server" Font-Bold="False" Text='<%# DateTime.Parse(Eval("seminarEndtime").ToString()).ToString("hh:mm tt")%>'></asp:Label>
                     <br />
                     Open To:

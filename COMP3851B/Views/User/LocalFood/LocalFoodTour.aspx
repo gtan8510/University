@@ -26,7 +26,7 @@
         <asp:DataList ID="FoodSeminarList" DataSourceID="FoodTourDataSource" runat="server" RepeatColumns="3" RepeatDirection="Horizontal">
         <ItemTemplate>
                 <!--<td runat="server" id="itemPlaceholder" />-->
-                <td class="auto-style1" width="33%">
+                <td class="auto-style1" width="30%">
                     <asp:Image ID="Image1" runat="server" Height="200px" Width="350px" ImageUrl='<%# "~/images/" + Eval("foodImage") %>' />
                     <br /><br />
                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text='<%# Eval("foodName")%>'></asp:Label>

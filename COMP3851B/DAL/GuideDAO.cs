@@ -377,13 +377,52 @@ namespace COMP3851B.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            String sqlstmt = "SELECT * FROM tutorialGuide WHERE gdeCatid LIKE @query AND gdeTitle LIKE @query2 AND gdeDesc LIKE @query3";
+            String sqlstmt = "SELECT * FROM tutorialGuide tg INNER JOIN tutorialGuideCategory tgc on tgc.gdeCatID = @query WHERE tg.gdeCatid LIKE @query AND tg.gdeTitle LIKE @query2 ";
 
             SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
 
-            da.SelectCommand.Parameters.AddWithValue("@query", "%" + gde.gdeCatID + "%");
+            da.SelectCommand.Parameters.AddWithValue("@query", gde.gdeCatID);
             da.SelectCommand.Parameters.AddWithValue("@query2", "%" + gde.gdeTitle + "%");
-            da.SelectCommand.Parameters.AddWithValue("@query3", "%" + gde.gdeDesc + "%");
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            List<Guide> gdeList = new List<Guide>();
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 0)
+            {
+                gdeList = null;
+            }
+            else
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    int id = Convert.ToInt32(row["gdeID"]);
+                    int catid = Convert.ToInt32(row["gdeCatID"]);
+                    string title = row["gdeTitle"].ToString();
+                    string thumbnail = row["gdeThumbnail"].ToString();
+                    string catname = row["gdeCatName"].ToString();
+                    string desc = row["gdeDesc"].ToString();
+
+                    Guide objRate = new Guide(id, title, desc, thumbnail, catid, catname);
+                    gdeList.Add(objRate);
+                }
+            }
+            return gdeList;
+        }
+
+        public List<Guide> SearchUserGuide(int catid, string title)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            String sqlstmt = "SELECT * FROM tutorialGuide WHERE gdeCatid = @paracatid AND gdeTitle LIKE @paratitle";
+
+            SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("@paracatid", catid);
+            da.SelectCommand.Parameters.AddWithValue("@paratitle", "%" + title + "%");
 
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -400,9 +439,10 @@ namespace COMP3851B.DAL
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     int id = Convert.ToInt32(row["gdeCatID"]);
-                    string name = row["gdeCatName"].ToString();
+                    string name = row["gdeTitle"].ToString();
+                    string image = row["gdeThumbnail"].ToString();
 
-                    Guide objRate = new Guide(id, name);
+                    Guide objRate = new Guide(name, image, id);
                     gdeList.Add(objRate);
                 }
             }

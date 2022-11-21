@@ -69,7 +69,8 @@
             <!--Guide Title -->
             <div class="form-group">
                 <asp:Label ID="lblTitle" runat="server"  CssClass="col-12 control-label" Text="Title"></asp:Label>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(Title cannot be empty)" ControlToValidate="txtTitle" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(Title cannot be empty)" ControlToValidate="txtTitle" ForeColor="Red" ValidationGroup="GroupAdd"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="(Title cannot be empty)" ControlToValidate="txtTitle" ForeColor="Red" ValidationGroup="GroupSearch"></asp:RequiredFieldValidator>
                 <div class="col-12"> 
                     <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control" placeholder="Enter the title of the tutorial guide"></asp:TextBox>
                 </div>
@@ -91,7 +92,8 @@
             <!--Guide Category -->
             <div class="form-group">
                 <asp:Label ID="Label1" runat="server"  CssClass="col-2 control-label" Text="Category"></asp:Label>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" InitialValue="0" runat="server" ErrorMessage="(A category must be selected)" ControlToValidate="ddlCat" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" InitialValue="0" runat="server" ErrorMessage="(A category must be selected)" ControlToValidate="ddlCat" ForeColor="Red" ValidationGroup="GroupAdd"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" InitialValue="0" runat="server" ErrorMessage="(A category must be selected)" ControlToValidate="ddlCat" ForeColor="Red" ValidationGroup="GroupSearch"></asp:RequiredFieldValidator>
                 <div class="col-12"> 
                     <asp:DropDownList ID="ddlCat" runat="server">
                     </asp:DropDownList>
@@ -101,15 +103,15 @@
             <!--Description -->
             <div class="form-group">
                 <asp:Label ID="lblDesc" runat="server"  CssClass="col-2 control-label" Text="Enter the description of the tutorial guide. This will be the content of your guide."></asp:Label>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="(Description cannot be empty)" ControlToValidate="txtSummernote" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="(Description cannot be empty)" ControlToValidate="txtSummernote" ForeColor="Red" ValidationGroup="GroupAdd"></asp:RequiredFieldValidator>
                 <div class="col-12">
                     <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>                </div>
              </div>
 
             <!--Add & Search / Edit& Cancel buttons -->
             <div id="crud">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click"/>
-                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" ValidationGroup="GroupAdd"/>
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click" ValidationGroup="GroupSearch"/>
             </div>            
             
             <br /><br />

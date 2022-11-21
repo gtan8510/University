@@ -57,22 +57,13 @@
             z-index:-99;
         }
         .form-control{
-            -webkit-border-top-left-radius: 30px;
-            -webkit-border-bottom-left-radius: 30px;
-            -moz-border-radius-topleft: 30px;
-            -moz-border-radius-bottomleft: 30px;
-            border-top-left-radius: 30px;
-            border-bottom-left-radius: 30px;
-            -webkit-border-top-right-radius: 30px;
-            -webkit-border-bottom-right-radius: 30px;
-            -moz-border-radius-topright: 30px;
-            -moz-border-radius-bottomright: 30px;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
-            
+            border:0;
+            border-bottom:solid 1px lightgray;
+            outline:none; /* prevents textbox highlight in chrome */
+            border-radius: 0;
         }
         .btnSearch{
-            margin-left:10px;
+            margin-left:20px;
         }
         .search{
             margin-top: -45px;
@@ -97,6 +88,9 @@
               padding: 50px;
               font-size: 50px;
         }
+        .align-items-stretch{
+            margin-bottom:20px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -111,8 +105,8 @@
 
         <div class="container search">
             <div style="display:flex; flex-direction:row;">
-                <asp:TextBox ID="tbSearch" class="form-control txtSearch" type="search" placeholder="Search" aria-label="Search" runat="server"></asp:TextBox>
-                <asp:LinkButton runat="server" ID="lbSearch" CssClass="btnSearch"><i class="fa fa-search fa-3x" aria-hidden="true"></i></asp:LinkButton>
+                <asp:TextBox ID="tbSearch" class="form-control txtSearch" type="search" placeholder="Search  for a guide" aria-label="Search" runat="server"></asp:TextBox>
+                <asp:LinkButton runat="server" ID="lbSearch" CssClass="btnSearch" OnClick="lbSearch_Click"><i class="fa fa-search fa-3x" aria-hidden="true"></i></asp:LinkButton>
             </div>
         </div>
 
@@ -123,13 +117,13 @@
                         <asp:ListView ID="ListView1" runat="server" GroupItemCount="4" GroupPlaceholderID="groupPlaceHolder1" ItemPlaceholderID="itemPlaceHolder1" OnItemCommand="ListView1_ItemCommand1" DataKeyNames="gdeID">
                             <EmptyDataTemplate>
                                 <div class="container">
-                                    <hr />
+                                    <br />
                                     <br />
                                     <h3>
                                         There is no information on this topic as of yet. 
                                     </h3>
                                     <h3>
-                                        Write us a feedback on what you would like to see for this topic.
+                                        Write us a feedback to let us know what you would like to add on this topic.
                                     </h3>
                                 </div>
                             </EmptyDataTemplate>

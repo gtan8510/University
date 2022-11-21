@@ -100,7 +100,6 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 catch //Internal code error
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when adding new item. Please contact the developers about the issue.')", true);
-
                 }
             }
             else //Button name = "Save"
@@ -183,7 +182,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 string title = txtTitle.Text;
                 int catid = Convert.ToInt32(ddlCat.SelectedValue);
 
-                Guide gde = new Guide(catid, title, desc);
+                Guide gde = new Guide(title, catid);
                 try
                 {
                     gdeList = gde.SearchForGuide();

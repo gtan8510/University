@@ -15,14 +15,21 @@ namespace COMP3851B.Views.User.TutorialGuide
         {
             if (Session["CatID2Guide"] != null)
             {
-                int id = Convert.ToInt32(Session["CatID2Guide"]);
-                Guide gde = new Guide();
-                gdeList = gde.GetAllByCategory(id);
-                gde = gde.GetOneCategory(id);
-                lblHeader.Text = "Search " + gde.gdeCatName;
+                try
+                {
+                    int id = Convert.ToInt32(Session["CatID2Guide"]);
+                    Guide gde = new Guide();
+                    gdeList = gde.GetAllByCategory(id);
+                    gde = gde.GetOneCategory(id);
+                    lblHeader.Text = "Search " + gde.gdeCatName;
 
-                ListView1.DataSource = gdeList;
-                ListView1.DataBind();
+                    ListView1.DataSource = gdeList;
+                    ListView1.DataBind();
+                }
+                catch
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while loading this page. Please contact the developers about the issue.')", true);
+                }
             }
 
         }
@@ -36,6 +43,47 @@ namespace COMP3851B.Views.User.TutorialGuide
 
                 Response.Redirect("GuideDetails.aspx");
             }
+        }
+
+        protected void lbSearch_Click(object sender, EventArgs e)
+        {
+            string searchtxt = tbSearch.Text;
+            int gdecatid = Convert.ToInt32(Session["CatID2Guide"]);
+
+            if (searchtxt != "")
+            {
+                try
+                {
+                    Guide gde = new Guide();
+                    gdeList = gde.SearchUserGuide(gdecatid, searchtxt);
+
+                    ListView1.DataSource = gdeList;
+                    ListView1.DataBind();
+                }
+                catch
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured trying to search a topic. Please contact the developers about the issue.')", true);
+                }
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(Session["CatID2Guide"]);
+                    Guide gde = new Guide();
+                    gdeList = gde.GetAllByCategory(id);
+                    gde = gde.GetOneCategory(id);
+                    lblHeader.Text = "Search " + gde.gdeCatName;
+
+                    ListView1.DataSource = gdeList;
+                    ListView1.DataBind();
+                }
+                catch
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while loading this page. Please contact the developers about the issue.')", true);
+                }
+            }
+
         }
     }
 }

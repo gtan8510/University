@@ -78,15 +78,11 @@
             <div id="crud">
                 <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
                 <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
+                <asp:Label ID="lblNotice" runat="server"  Class="col-12 control-label h4" ForeColor="Red"></asp:Label>
             </div>
 
             <br />
             <hr />
-
-            <!--Notice Label -->
-            <div>
-                <asp:Label ID="lblNotice" runat="server"  CssClass="col-12 control-label" ForeColor="Red"></asp:Label>
-            </div>
             
             <br />
 

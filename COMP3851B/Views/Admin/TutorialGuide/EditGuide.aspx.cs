@@ -34,6 +34,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ddlCat.SelectedValue = "0";
                 UploadTmbnail.Attributes.Clear();
                 txtSummernote.Text = "";
+                lblNotice.Text = "";
                 lblID.Text = "Guide ID: (No row selected)";
 
                 gdeList = gde.GetAllGuides();
@@ -53,7 +54,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 string title = txtTitle.Text;
                 string desc = txtSummernote.Text;
 
-                    //Get thumbnail image file and upload it to project folder
+                //Get thumbnail image file and upload it to project folder
                 var folder = Server.MapPath("~/uploads/");
                 string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
                 if (fileName == "")
@@ -86,6 +87,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         UploadTmbnail.Attributes.Clear();
                         txtSummernote.Text = "";
                         lblID.Text = "Guide ID: (No row selected)";
+                        lblNotice.Text = "";
 
                         //Rebind updated data
                         gdeList = gde.GetAllGuides();
@@ -137,6 +139,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         txtSummernote.Text = "";
                         imgThumbnail.ImageUrl = "../../../Images/insertimage.png";
                         lblID.Text = "Guide ID: (No row selected)";
+                        lblNotice.Text = "";
 
                         //Rebind updated data
                         gdeList = gde.GetAllGuides();
@@ -168,6 +171,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ddlCat.SelectedValue = "0";
                 UploadTmbnail.Attributes.Clear();
                 txtSummernote.Text = "";
+                lblNotice.Text = "";
                 imgThumbnail.ImageUrl = "../../../Images/insertimage.png";
                 lblID.Text = "Guide ID: (No row selected)";
 
@@ -186,8 +190,17 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 try
                 {
                     gdeList = gde.SearchForGuide();
-                    GVgde.DataSource = gdeList;
-                    GVgde.DataBind();
+                    
+                    if (gdeList == null)
+                    {
+                        lblNotice.Text = "No matching data found. Showing all data.";
+                    }
+                    else
+                    {
+                        GVgde.DataSource = gdeList;
+                        GVgde.DataBind();
+                    }
+
                 }
                 catch //Internal code error
                 {
@@ -270,6 +283,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
             Guide gde = new Guide();
             gdeList = gde.GetAllGuides();
             GVgde.DataSource = gdeList;
+            lblNotice.Text = "";
             GVgde.DataBind();
         }
     }

@@ -112,10 +112,11 @@
             <div id="crud">
                 <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" ValidationGroup="GroupAdd"/>
                 <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click" ValidationGroup="GroupSearch"/>
+                <asp:Label ID="lblNotice" runat="server"  Class="col-12 control-label h4" ForeColor="Red"></asp:Label>
             </div>            
             
-            <br /><br />
-            
+            <br />
+
             <!-- GridView -->
             <div class="gridview" style="overflow:auto; max-height:600px;">
                 <asp:GridView ID="GVgde" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" DataKeyNames="gdeID" OnRowDeleting="GVgde_RowDeleting" OnSelectedIndexChanged="GVgde_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVgde_PageIndexChanging" PageSize="1">

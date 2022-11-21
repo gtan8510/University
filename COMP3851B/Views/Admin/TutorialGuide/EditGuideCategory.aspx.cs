@@ -218,6 +218,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
             Guide gde = new Guide();
             catList = gde.GetAllCategories();
             GVCat.DataSource = catList;
+            lblNotice.Text = "";
             GVCat.DataBind();
         }
     }

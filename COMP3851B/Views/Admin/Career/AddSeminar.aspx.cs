@@ -15,10 +15,14 @@ namespace COMP3851B.Views.Admin.Career
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            /*if (Session["uname"].ToString() != "admin")
             {
-                LoadRecord();
+                ScriptManager.RegisterStartupScript(this, this.GetType(),"alert","alert('This page is only accessible to Admins');window.location ='UserHome.aspx';",true);
             }
+            else
+            {*/
+                LoadRecord();
+            /*}*/
         }
 
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-CKIA7PUJ\\SQLEXPRESS;Initial Catalog=COMP3851B;Integrated Security=True");
@@ -26,7 +30,21 @@ namespace COMP3851B.Views.Admin.Career
         /*Add button*/
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            //Create folder and file paths
+            var folder = Server.MapPath("~/uploads/");
+            string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            string filePath = "~/images/" + fileName;
+
+            //create new directory for images
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+                //click 'Show All Files' to find folder
+
+            }
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(filePath));
+
+            //string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
             string contentType = FileUpload1.PostedFile.ContentType;
             using (Stream fs = FileUpload1.PostedFile.InputStream)
             {

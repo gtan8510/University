@@ -15,13 +15,13 @@ namespace COMP3851B.Views.User.Explore.FoodTour
     {
 
         /// <summary>
-        /// FoodSeminarList control.
+        /// FoodTourView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList FoodSeminarList;
+        protected global::System.Web.UI.WebControls.ListView FoodTourView;
 
         /// <summary>
         /// FoodTourDataSource control.

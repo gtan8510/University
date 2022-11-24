@@ -13,7 +13,14 @@ namespace COMP3851B.Views.Admin.FoodTour
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadRecord();
+            /*if (Session["uname"].ToString() != "admin")
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(),"alert","alert('This page is only accessible to Admins');window.location ='UserHome.aspx';",true);
+            }
+            else
+            {*/
+                LoadRecord();
+            /*}*/
         }
 
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-CKIA7PUJ\\SQLEXPRESS;Initial Catalog=COMP3851B;Integrated Security=True");

@@ -6,13 +6,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        td{
-            display:inline-block;
-            width:max-content;
-        }
-        tr{
-            width:max-content;
-        }
         .ButtonDirect{
             color:black;
         }

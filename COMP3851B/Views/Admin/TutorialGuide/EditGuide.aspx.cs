@@ -118,6 +118,10 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 {
                     fileName = imgThumbnail.ImageUrl;
                 }
+                if (fileName.Contains("~/uploads/"))
+                {
+                    fileName = fileName.Substring(10);
+                }
                 string filePath = "~/uploads/" + fileName;
 
                 UploadTmbnail.PostedFile.SaveAs(Server.MapPath(filePath));

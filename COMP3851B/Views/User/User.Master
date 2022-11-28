@@ -45,7 +45,7 @@
             <!-- Guide -->
                     <li class="nav-item dropdown" >
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" style ="color :black ">Guides</a>
-                        <ul class="dropdown-menu" style="height:400px; overflow:auto">
+                        <ul class="dropdown-menu" style="max-height:400px; overflow:auto">
                             <asp:ListView ID="LVCat" runat="server" DataKeyNames="gdeCatID" OnItemCommand="LVCat_ItemCommand">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="LbCat" runat="server" Class="dropdown-item" ><%#: Eval("gdeCatName") %></asp:LinkButton>

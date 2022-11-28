@@ -92,7 +92,7 @@
     <div style="margin-top:50px;">
         <div class="jumbotron d-flex justify-content-center">
             <div class="container header">
-                <asp:Label ID="lblHeader" runat="server" class="lblHeader" Text="Search Example"></asp:Label>
+                <asp:Label ID="lblHeader" runat="server" class="lblHeader" Text="Search"></asp:Label>
             </div>
         </div>
 

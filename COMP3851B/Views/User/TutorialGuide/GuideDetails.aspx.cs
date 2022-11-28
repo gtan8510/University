@@ -12,11 +12,16 @@ namespace COMP3851B.Views.User.TutorialGuide
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblTitle.Text = "";
+            lblDesc.Text = "";
+            jumbo.Attributes.Remove("background-image");
+
             int id = Convert.ToInt32(Session["GdeID2Details"]);
             Guide gde = new Guide();
             gde = gde.GetOneGuide(id);
-            lbltest.Text = gde.gdeDesc;
             lblTitle.Text = gde.gdeTitle;
+            lblDesc.Text = gde.gdeDesc;
+            jumbo.Attributes.Add("background-image", gde.gdeThumbnail);
         }
     }
 }

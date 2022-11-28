@@ -15,6 +15,15 @@ namespace COMP3851B.Views.User.TutorialGuide
     {
 
         /// <summary>
+        /// jumbo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl jumbo;
+
+        /// <summary>
         /// lblTitle control.
         /// </summary>
         /// <remarks>
@@ -24,12 +33,12 @@ namespace COMP3851B.Views.User.TutorialGuide
         protected global::System.Web.UI.WebControls.Label lblTitle;
 
         /// <summary>
-        /// lbltest control.
+        /// lblDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltest;
+        protected global::System.Web.UI.WebControls.Label lblDesc;
     }
 }

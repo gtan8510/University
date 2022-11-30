@@ -34,7 +34,6 @@
             transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
             cursor: pointer;
         }
-
         .content:hover{
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
@@ -89,6 +88,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <!--Jumbotron-->
     <div style="margin-top:50px;">
         <div class="jumbotron d-flex justify-content-center">
             <div class="container header">
@@ -96,6 +97,7 @@
             </div>
         </div>
 
+        <!--Search Function-->
         <div class="container search">
             <div style="display:flex; flex-direction:row;">
                 <asp:TextBox ID="tbSearch" class="form-control txtSearch" type="search" placeholder="Search  for a guide" aria-label="Search" runat="server"></asp:TextBox>
@@ -103,11 +105,14 @@
             </div>
         </div>
 
+        <!--Main Content-->
         <div class="container">
             <div class="col-md-12 pt-1">
                 <div class="card outer">
                     <div class="card-body">
                         <asp:ListView ID="ListView1" runat="server" GroupItemCount="4" GroupPlaceholderID="groupPlaceHolder1" ItemPlaceholderID="itemPlaceHolder1" OnItemCommand="ListView1_ItemCommand1" DataKeyNames="gdeID">
+                            
+                            <!--Empty Data Template-->
                             <EmptyDataTemplate>
                                 <div class="container">
                                     <br />
@@ -120,11 +125,15 @@
                                     </h3>
                                 </div>
                             </EmptyDataTemplate>
+
+                            <!--Group Template-->
                             <GroupTemplate>
                                 <div class="row text-center">
                                     <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
                                 </div>
                             </GroupTemplate>
+
+                            <!--Item Template-->
                             <ItemTemplate>
                                 <div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch">
                                     <div class="card content">
@@ -137,6 +146,8 @@
                                     </div>
                                 </div>
                             </ItemTemplate>
+
+                            <!--Alternating Item Template-->
                             <AlternatingItemTemplate>
                                 <div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch">
                                     <div class="card content">
@@ -157,3 +168,30 @@
         <br /><br /><br /><br /><br /><br /><br /><br />
     </div>
 </asp:Content>
+<!--References-->
+<!--CSS Image Display->
+    <!--***************************************************************************************
+    *    Title: "try these stylings to your image tag"
+    *    Author/Username: Udayavani
+    *    Date: 4 June, 2019
+    *    Availability: https://stackoverflow.com/questions/56437535/card-image-width-not-equal-when-i-gave-max-height
+    *    Line(s): 19-26
+    ***************************************************************************************/-->
+
+<!--CSS Card Hover Animation-->
+    <!--***************************************************************************************
+    *    Title: Hover Bootstrap Cards
+    *    Author/Username: Corey
+    *    Date: 4 July, 2020
+    *    Availability: https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
+    *    Line(s): 30-40
+    ***************************************************************************************/-->
+
+<!--HTML Bootstrap Card Display->
+    <!--***************************************************************************************
+    *    Title: ListView and Card Bootstrap
+    *    Author/Username: User-1838255255
+    *    Date: 26 April, 2018
+    *    Availability: https://social.msdn.microsoft.com/Forums/en-US/7cbc9cfb-fbc8-4415-bc42-e6716d2978d6/listview-and-card-bootstrap?forum=aspgettingstarted
+    *    Line(s): 105-155
+    ***************************************************************************************/-->

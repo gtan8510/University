@@ -43,6 +43,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <!--Jumbotron Image-->
     <div runat="server" ID="jumbo" class="jumbotron">
         <div class="container header">
@@ -52,6 +53,7 @@
     <!--Content-->
     <div class="container d-flex justify-content-center" style="margin-top:-250px;">
         <div class="search">
+
             <!--Header Title-->
             <div class="header" style="text-align:center;">
                 <asp:Label ID="lblTitle" runat="server" Class="h2" Text=""></asp:Label>

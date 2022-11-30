@@ -152,14 +152,6 @@
 
     <!-- JavaScripts -->
 
-    <!--summernote script -->
-    <!--***************************************************************************************
-    *    Title: "Here is My code Working Perfectly"
-    *    Author/Username: PK-1825
-    *    Date: 27 Dec, 2016
-    *    Availability: https://stackoverflow.com/questions/36462787/is-it-possible-to-get-value-from-summernote-editor-in-asp-net-web-forms
-    *
-    ***************************************************************************************/-->
     <script>
         $(function () {
             // Set up your summernote instance
@@ -178,15 +170,6 @@
         }
     </script>
 
-    <!--Dynamic image source upload -->
-    <!--***************************************************************************************
-    *    Title: "You can add it using javascript"
-    *    Author/Username: Hardik Patel
-    *    Date: 6 June, 2016
-    *    Availability: https://stackoverflow.com/questions/37655301/set-aspimage-url-when-image-is-uploaded-in-aspfileupload
-    *
-    ***************************************************************************************/-->
-
      <script type="text/javascript">
          document.on
          function img() {
@@ -199,3 +182,21 @@
          }
      </script>
 </asp:Content>
+<!--References-->
+<!--Dynamic image source upload -->
+    <!--***************************************************************************************
+    *    Title: "You can add it using javascript"
+    *    Author/Username: Hardik Patel
+    *    Date: 6 June, 2016
+    *    Availability: https://stackoverflow.com/questions/37655301/set-aspimage-url-when-image-is-uploaded-in-aspfileupload
+    *    Line(s): 173-183
+    ***************************************************************************************/-->
+
+<!--Summernote script -->
+    <!--***************************************************************************************
+    *    Title: "Here is My code Working Perfectly"
+    *    Author/Username: PK-1825
+    *    Date: 27 Dec, 2016
+    *    Availability: https://stackoverflow.com/questions/36462787/is-it-possible-to-get-value-from-summernote-editor-in-asp-net-web-forms
+    *    Line(s): 155-171
+    ***************************************************************************************/-->
